@@ -28,7 +28,7 @@ include "header.php"
                                 <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév</span> <!-- ID ne felejtsd -->
                                 <input type="text" class="form-control mid" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s">
                             </div>
-                            <div class="input-group input-group-sm mb-3">
+                            <div class="input-group input-group-sm mb-3 inputField">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév</span>
                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             </div>
