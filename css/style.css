@@ -1,6 +1,11 @@
-.mid{
+.mid {
     text-align: center;
 }
-.col{
+
+.col {
     border: 1px solid black;
+}
+
+.inputField {
+    width: 30%;
 }

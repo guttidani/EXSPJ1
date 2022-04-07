@@ -1,0 +1,173 @@
+Bolti eladó/pénztáros;Bolti értékesítés;ügyintéző
+Ügyfélszolgálati/Call Center igazgató;Ügyfélszolgálat/Call Center;felsővezető
+Ügyfélszolgálati/Call Center vezető;Ügyfélszolgálat/Call Center;középvezető
+Ügyfélszolgálati/Call Center szakértő;Ügyfélszolgálat/Call Center;szakértő
+Ügyfélszolgálati/Call Center csoportvezető;Ügyfélszolgálat/Call Center;csoportvezető
+Ügyfélszolgálati/Call Center operátor;Ügyfélszolgálat/Call Center;ügyintéző
+Műszaki vevőszolgálati szakértő;Ügyfélszolgálat/Call Center;szakértő
+Műszaki vevőszolgálati ügyintéző;Ügyfélszolgálat/Call Center;ügyintéző
+Gazdasági/Pénzügyi igazgató;Pénzügy;felsővezető
+Pénzügyi vezető;Pénzügy;középvezető
+Pénzügyi szakértő;Pénzügy;szakértő
+Treasury szakértő;Pénzügy;szakértő
+Vagyon/portfólio kezelő szakértő;Pénzügy;szakértő
+Pénzügyi ügyintéző;Pénzügy;ügyintéző
+Adózási vezető;Pénzügy;középvezető
+Adózási szakértő;Pénzügy;szakértő
+Főkönyvelő/Számviteli igazgató;Számvitel;felsővezető
+Számviteli vezető;Számvitel;középvezető
+Számviteli szakértő;Számvitel;szakértő
+Könyvelő;Számvitel;ügyintéző
+Számviteli ügyintéző;Számvitel;ügyintéző
+Kontrolling vezető;Kontrolling;középvezető
+Kontroller;Kontrolling;szakértő
+Belső ellenőrzési vezető;Audit;középvezető
+Belső ellenőr;Audit;szakértő
+Logisztikai igazgató;Általános logisztika;felsővezető
+Logisztikai vezető;Általános logisztika;középvezető
+Logisztikai szakértő;Általános logisztika;szakértő
+Logisztikai ügyintéző;Általános logisztika;ügyintéző
+Anyagellátás/gazdálkodás vezető;Általános logisztika;középvezető
+Anyag/Készletgazdálkodási szakértő;Általános logisztika;szakértő
+Anyag/Készletgazdálkodó;Általános logisztika;ügyintéző
+Beszerzési igazgató;Beszerzés;felsővezető
+Beszerzési vezető;Beszerzés;középvezető
+Stratégiai beszerző;Beszerzés;szakértő
+Beszerző szakértő;Beszerzés;szakértő
+Beszerző;Beszerzés;ügyintéző
+Szállítási vezető;Szállítás/Raktározás;középvezető
+Szállításszervező/Diszpécser;Szállítás/Raktározás;ügyintéző
+Vámügyintéző;Szállítás/Raktározás;ügyintéző
+Tehergépjármű sofőr;Szállítás/Raktározás;fizikai
+Raktárvezető;Szállítás/Raktározás;középvezető
+Raktári csoport/művezető;Szállítás/Raktározás;csoportvezető
+Raktárkezelő/Raktáros;Szállítás/Raktározás;fizikai
+Munkakör;Munkakör család;Szint
+Targoncakezelő/Anyagmozgató;Szállítás/Raktározás;fizikai
+Műszaki igazgató;Általános műszaki;felsővezető
+Műszaki vezető/Főmérnök;Általános műszaki;középvezető
+Műszaki mérnök;Általános műszaki;szakértő
+Műszaki technológus;Általános műszaki;technikus
+Műszaki ügyintéző;Általános műszaki;ügyintéző
+Fejlesztési igazgató;Termék/gyártás fejlesztés;felsővezető
+Fejlesztési vezető;Termék/gyártás fejlesztés;középvezető
+Termék/szolgáltatás fejlesztő mérnök;Termék/gyártás fejlesztés;szakértő
+Gyártás/folyamat fejlesztő mérnök;Termék/gyártás fejlesztés;szakértő
+Automatizálási/PLC mérnök;Termék/gyártás fejlesztés;szakértő
+Lean/SixSigma/Kaizen mérnök;Termék/gyártás fejlesztés;szakértő
+Csomagolás mérnök;Termék/gyártás fejlesztés;szakértő
+Teszt mérnök;Termék/gyártás fejlesztés;szakértő
+Fejlesztés technikus;Termék/gyártás fejlesztés;technikus
+Fejlesztési ügyintéző;Termék/gyártás fejlesztés;ügyintéző
+Beruházási vezető;Beruházás;középvezető
+Beruházás mérnök/szakértő;Beruházás;szakértő
+Karbantartási igazgató;Karbantartás;felsővezető
+Karbantartási vezető;Karbantartás;középvezető
+Karbantartó mérnök;Karbantartás;szakértő
+Karbantartó technikus;Karbantartás;technikus
+Karbantartási ügyintéző;Karbantartás;ügyintéző
+Szerszám mérnök;Karbantartás;szakértő
+Hegesztő mérnök;Karbantartás;szakértő
+Villamos mérnök;Karbantartás;szakértő
+Karbantartási csoport/művezető;Karbantartás;csoportvezető
+Karbantartó szakmunkás (bonyolultabb szakma);Karbantartás;fizikai
+Karbantartó szakmunkás (egyszerűbb szakma);Karbantartás;fizikai
+Szerszám készítő/karbantartó;Karbantartás;fizikai
+Villanyszerelő;Karbantartás;fizikai
+Műszerész;Karbantartás;fizikai
+Géplakatos;Karbantartás;fizikai
+Vízvezeték és gázszerelő;Karbantartás;fizikai
+Hegesztő;Karbantartás;fizikai
+Festő;Karbantartás;fizikai
+Gépi forgácsoló/Esztergályos;Karbantartás;fizikai
+Nehézgép kezelő;Karbantartás;fizikai
+Betanított karbantartó/Karbantartó segéd;Karbantartás;fizikai
+EHS vezető;EHS;középvezető
+EHS/Környezetvédelmi mérnök;EHS;szakértő
+EHS technikus;EHS;technikus
+Energetikai vezető;Energia;középvezető
+Energetikai mérnök;Energia;szakértő
+Munkakör;Munkakör család;Szint
+Energetikai technikus;Energia;technikus
+Termeléstervezési vezető;Termeléstervezés;középvezető
+Termeléstervező;Termeléstervezés;szakértő
+Anyagtervező/Diszponens;Termeléstervezés;szakértő
+Termelési igazgató;Operatív termelés;felsővezető
+Termelési vezető;Operatív termelés;középvezető
+Termelés mérnök;Operatív termelés;szakértő
+Termelési asszisztens;Operatív termelés;ügyintéző
+Üzem/Gyáregység vezető;Operatív termelés;középvezető
+Termelési csoport/művezető;Operatív termelés;csoportvezető
+Termelési műszakvezető;Operatív termelés;csoportvezető
+CNC gépkezelő/programozó;Operatív termelés;fizikai
+Gépbeállító;Operatív termelés;fizikai
+Szerelő szakmunkás;Operatív termelés;fizikai
+Gépkezelő/Operátor (bonyolultabb berendezések);Operatív termelés;fizikai
+Gépkezelő/Operátor (egyszerűbb berendezések);Operatív termelés;fizikai
+Csomagoló;Operatív termelés;fizikai
+Betanított munkás;Operatív termelés;fizikai
+Segédmunkás;Operatív termelés;fizikai
+Minőségügyi igazgató;Minőség;felsővezető
+Minőségbiztosítási vezető;Minőség;középvezető
+Minőségbiztosítási mérnök;Minőség;szakértő
+Minőségbiztosítási technikus;Minőség;technikus
+Minőségellenőrzési vezető;Minőség;középvezető
+Minőségellenőrzési mérnök;Minőség;szakértő
+Minőségellenőrzési technikus;Minőség;technikus
+Minőségellenőrzési csoportvezető;Minőség;csoportvezető
+Laborvezető;Minőség;középvezető
+Minőségellenőr/Laboráns;Minőség;technikus
+Beszállítói minőségbiztosítási/SQD mérnök;Minőség;szakértő
+Bejövő áru ellenőr;Minőség;ügyintéző
+Informatikai igazgató;IT fejlesztés;felsővezető
+IT fejlesztési vezető;IT fejlesztés;középvezető
+IT projektvezető;IT fejlesztés;csoportvezető
+Adat/adatbázis szakértő;IT fejlesztés;szakértő
+Rendszerszervező/Üzleti elemző;IT fejlesztés;szakértő
+ERP/SAP fejlesztő;IT fejlesztés;szakértő
+Programozó/Szoftverfejlesztő;IT fejlesztés;szakértő
+IT üzemeltetési vezető;IT üzemeltetés;középvezető
+IT biztonsági szakértő;IT üzemeltetés;szakértő
+IT operátor;IT üzemeltetés;ügyintéző
+Alkalmazás rendszergazda;IT üzemeltetés;szakértő
+ERP/SAP modulgazda;IT üzemeltetés;szakértő
+HR igazgató;Humán;felsővezető
+Munkakör;Munkakör család;Szint
+HR vezető;Humán;középvezető
+HR üzleti partner;Humán;szakértő
+HR generalista;Humán;szakértő
+Toborzási szakértő;Humán;szakértő
+Bér és juttatási szakértő;Humán;szakértő
+Személyzetfejlesztési/Képzési szakértő;Humán;szakértő
+Oktató/Tréner;Humán;szakértő
+HR ügyintéző;Humán;ügyintéző
+Bér- és TB ügyintéző;Humán;ügyintéző
+Projektmenedzsment vezető;Projekt menedzsment;középvezető
+Projektmenedzser;Projekt menedzsment;szakértő
+Projekt asszisztens;Projekt menedzsment;ügyintéző
+Stratégiai/Üzletfejlesztési igazgató;Üzletfejlesztés;felsővezető
+Stratégiai/Üzletfejlesztési vezető;Üzletfejlesztés;középvezető
+Stratégiai/Üzletfejlesztési szakértő;Üzletfejlesztés;szakértő
+BPR/Folyamatfejlesztési vezető;Üzletfejlesztés;középvezető
+BPR/Folyamatfejlesztési szakértő;Üzletfejlesztés;szakértő
+PR/Kommunikációs vezető;PR/Kommunikáció;középvezető
+PR/Kommunikációs szakértő;PR/Kommunikáció;szakértő
+Közbeszerzési/pályázati szakértő;Közbeszerzés/Tender;szakértő
+Jogi vezető;Jog;középvezető
+Jogász/jogtanácsos;Jog;szakértő
+Üzemfenntartási vezető;Üzemeltetés/Biztonság;középvezető
+Üzemfenntartási mérnök;Üzemeltetés/Biztonság;szakértő
+Üzemfenntartási ügyintéző;Üzemeltetés/Biztonság;ügyintéző
+Flottakezelő;Üzemeltetés/Biztonság;ügyintéző
+Recepciós/Gondnok;Üzemeltetés/Biztonság;fizikai
+Biztonsági vezető;Üzemeltetés/Biztonság;középvezető
+Biztonsági szakértő;Üzemeltetés/Biztonság;szakértő
+Személy- és vagyonőr;Üzemeltetés/Biztonság;fizikai
+Személygépkocsivezető;Üzemeltetés/Biztonság;fizikai
+Kertész;Üzemeltetés/Biztonság;fizikai
+Takarító;Üzemeltetés/Biztonság;fizikai
+Adminisztrációs vezető/Irodavezető;Ügyvitel/Adminisztráció;középvezető
+Titkárságvezető;Ügyvitel/Adminisztráció;középvezető
+Menedzser asszisztens;Ügyvitel/Adminisztráció;szakértő
+Titkár/Titkárnő;Ügyvitel/Adminisztráció;ügyintéző
+Fordító/tolmács;Ügyvitel/Adminisztráció;szakértő

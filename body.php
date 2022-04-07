@@ -1,6 +1,5 @@
 <?php
 
-include "header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,9 +11,15 @@ include "header.php";
 <body>
     <div class="container-l">
         <div class="row">
-            <div class="col mid">SZia</div> <!-- bal -->
-            <div class="col mid">szia</div> <!-- közepso -->
-            <div class="col mid">szs</div> <!-- jobb -->
+            <div class="col mid">SZia
+                <!-- bal -->
+            </div>
+            <div class="col mid">szia
+                <!-- közepso -->
+            </div>
+            <div class="col mid">szs
+                <!-- jobb -->
+            </div>
         </div>
     </div>
 </body>
