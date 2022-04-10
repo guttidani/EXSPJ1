@@ -3,16 +3,14 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.css">
+	
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        src = "js/bootstrap.js"
-    </script>
+   
 </head>
 
 <!-- navbar bootstrap -->
 
-<body>
+<header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light container mid">
 		<div class="container-fluid mid">
 			<a class="navbar-brand mid" href="index.php">Nyilvántartás</a> <!-- Cím-->
@@ -32,6 +30,6 @@
 			</div>
 		</div>
 	</nav>
-</body>
+</header>
 
 
