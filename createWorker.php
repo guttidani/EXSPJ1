@@ -22,22 +22,25 @@ include "header.php"
             <div class="container-xl col">
                 <!-- közepso -->
                 <div>
-                    <div class="mid" style="height:30%">Dolgozó felvétele</div> 
+                    <div class="mid" style="font-size: 30px;">Dolgozó felvétele </div> 
+                    <br>
+                    <div class="mid">A csillaggal jelölt mezőket kötelező kitölteni</div>
+                    <br>
                     <!-- input form -->
                     <!-- ide kell a kozepso div címe, kozepre igazítva-->
                     <div class=" input-group input-group-sm mb-3 inputField">
-                        <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév</span> <!-- ID ne felejtsd -->
-                        <input type="text" class="form-control mid" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s">
+                        <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév*</span> <!-- ID ne felejtsd -->
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s">
                     </div>
                     <div class="input-group input-group-sm mb-3 inputField">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév</span>
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév*</span>
                         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                     </div>
                     <!-- dropdowns -->
 
                     <div class="dropdown inputField">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                            Munkakörök
+                            Munkakörök*
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                             <?php
@@ -51,7 +54,7 @@ include "header.php"
 
                     <div class="dropdown inputField">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                            Szervezeti egységek
+                            Szervezeti egységek*
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                             <?php
