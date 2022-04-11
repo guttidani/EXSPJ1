@@ -22,7 +22,7 @@ include "header.php"
             <div class="container-xl col">
                 <!-- közepso -->
                 <div>
-                    <div class="mid" style="font-size: 30px;">Dolgozó felvétele </div> 
+                    <div class="mid" style="font-size: 30px;">Dolgozó felvétele </div>
                     <br>
                     <div class="mid">A csillaggal jelölt mezőket kötelező kitölteni</div>
                     <br>
@@ -64,6 +64,23 @@ include "header.php"
                             }
                             ?>
                         </ul>
+                    </div>
+                    <br>
+                    <!-- dropdown2 -->
+                    <div class="mid">
+                        <select id="select" class="inputField">
+                            <option value="">Choose...</option>
+                            <optgroup label="Option group 1">
+                                <option value="">Option 1</option>
+                                <option value="">Option 2</option>
+                                <option value="">Option 3</option>
+                            </optgroup>
+                            <optgroup label="Option group 2">
+                                <option value="">Option 4</option>
+                                <option value="">Option 5</option>
+                                <option value="">Option 6</option>
+                            </optgroup>
+                        </select>
                     </div>
                     <br>
 
