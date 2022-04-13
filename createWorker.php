@@ -13,7 +13,8 @@
     <title>Dolgozó felvétele</title>
 </head>
 <?php
-include "header.php"
+include "header.php";
+include "connection.php";
 ?>
 <div class="container-l">
     <div class="row">
