@@ -14,3 +14,4 @@ if ($conn->connect_error) {
   error_log("Connection failed", 0);
 }
 error_log("Connection succesful", 0);
+?>
