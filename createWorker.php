@@ -12,9 +12,17 @@
     <script defer src="js/validation.js"></script>
     <title>Dolgozó felvétele</title>
 </head>
+
+
 <?php
 include "header.php";
+
+session_start();
 include "connection.php";
+if (isset($_POST[""])) {
+}
+
+
 ?>
 <div class="container-l">
     <div class="row">
@@ -25,13 +33,15 @@ include "connection.php";
                 <div class="mid" style="font-size: 30px;">Dolgozó felvétele </div><br>
                 <div class="mid">A csillaggal jelölt mezőket kötelező kitölteni</div><br>
                 <!-- név -->
-                <div class=" input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév*</span>
-                    <input id="vezetekNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" required>
-                </div>
-                <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév*</span>
-                    <input id="keresztNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <div>
+                    <div class=" input-group input-group-sm mb-3 inputField">
+                        <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév</span>
+                        <input id="vezetekNev" name="vezetekNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Kovács" required>
+                    </div>
+                    <div class="input-group input-group-sm mb-3 inputField">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév</span>
+                        <input id="keresztNev" name="keresztNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="*István">
+                    </div>
                 </div>
                 <!-- dropdowns -->
                 <div class="dropdown inputField">
@@ -56,30 +66,30 @@ include "connection.php";
                 </div><br>
                 <!-- Bruttóbér -->
                 <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Bruttóbér*</span>
-                    <input id="bruttoBer" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Bruttóbér</span>
+                    <input id="bruttoBer" name="bruttoBer" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="123 456Ft/hónap">
                 </div>
                 <!-- adóazonosító -->
                 <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Adóazonosító*</span>
-                    <input id="adoAzon" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="11">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Adóazonosító</span>
+                    <input id="adoAzon" name="adoAzon" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="10" placeholder="0123456789">
                 </div>
                 <!-- TAJ -->
                 <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">TAJ szám*</span>
-                    <input id="taj" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="9">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">TAJ szám</span>
+                    <input id="taj" name="taj" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="9" placeholder="123 456 789">
                 </div>
                 <!-- Bankszámlaszám -->
                 <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Bankszámla szám*</span>
-                    <input id="bankSzamla" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="16">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Bankszámla szám</span>
+                    <input id="bankSzamla" name="bankSzamla" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="24" placeholder="00001111-22223333-44445555">
                 </div>
                 <br>
-                <!-- mentés gomb -->
+                <!-- gombok -->
                 <div class="mid">
                     <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button id="createWorkerBtn" type="button" class="btn btn-primary">Mégse</button>
+                    <button id="megseBtn" type="button" class="btn btn-primary">Mégse</button>
                 </div>
             </div>
         </div>
