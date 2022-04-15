@@ -67,7 +67,7 @@ if (isset($_POST[""])) {
                 <!-- Bruttóbér -->
                 <div class="input-group input-group-sm mb-3 inputField">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Bruttóbér</span>
-                    <input id="bruttoBer" name="bruttoBer" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="123 456Ft/hónap">
+                    <input id="bruttoBer" maxlength="5" name="bruttoBer" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="123 456Ft/hónap">
                 </div>
                 <!-- adóazonosító -->
                 <div class="input-group input-group-sm mb-3 inputField">
