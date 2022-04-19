@@ -1,0 +1,171 @@
+Adat/adatbázis szakértő
+Adminisztrációs vezető/Irodavezető
+Adózási szakértő
+Adózási vezető
+Alkalmazás rendszergazda
+Anyag/Készletgazdálkodási szakértő
+Anyag/Készletgazdálkodó
+Anyagellátás/gazdálkodás vezető
+Anyagtervező/Diszponens
+Automatizálási/PLC mérnök
+Bejövő áru ellenőr
+Belső ellenőr
+Belső ellenőrzési vezető
+Bér és juttatási szakértő
+Bér- és TB ügyintéző
+Beruházás mérnök/szakértő
+Beruházási vezető
+Beszállítói minőségbiztosítási/SQD mérnök
+Beszerzési igazgató
+Beszerzési vezető
+Beszerző
+Beszerző szakértő
+Betanított karbantartó/Karbantartó segéd
+Betanított munkás
+Biztonsági szakértő
+Biztonsági vezető
+Bolti eladó/pénztáros
+BPR/Folyamatfejlesztési szakértő
+BPR/Folyamatfejlesztési vezető
+CNC gépkezelő/programozó
+Csomagolás mérnök
+Csomagoló
+EHS technikus
+EHS vezető
+EHS/Környezetvédelmi mérnök
+Energetikai mérnök
+Energetikai technikus
+Energetikai vezető
+ERP/SAP fejlesztő
+ERP/SAP modulgazda
+Fejlesztés technikus
+Fejlesztési igazgató
+Fejlesztési ügyintéző
+Fejlesztési vezető
+Festő
+Flottakezelő
+Fordító/tolmács
+Főkönyvelő/Számviteli igazgató
+Gazdasági/Pénzügyi igazgató
+Gépbeállító
+Gépi forgácsoló/Esztergályos
+Gépkezelő/Operátor (bonyolultabb berendezések)
+Gépkezelő/Operátor (egyszerűbb berendezések)
+Géplakatos
+Gyártás/folyamat fejlesztő mérnök
+Hegesztő
+Hegesztő mérnök
+HR generalista
+HR igazgató
+HR ügyintéző
+HR üzleti partner
+HR vezető
+Informatikai igazgató
+IT biztonsági szakértő
+IT fejlesztési vezető
+IT operátor
+IT projektvezető
+IT üzemeltetési vezető
+Jogász/jogtanácsos
+Jogi vezető
+Karbantartási csoport/művezető
+Karbantartási igazgató
+Karbantartási ügyintéző
+Karbantartási vezető
+Karbantartó mérnök
+Karbantartó szakmunkás (bonyolultabb szakma)
+Karbantartó szakmunkás (egyszerűbb szakma)
+Karbantartó technikus
+Kertész
+Kontroller
+Kontrolling vezető
+Könyvelő
+Közbeszerzési/pályázati szakértő
+Laborvezető
+Lean/SixSigma/Kaizen mérnök
+Logisztikai igazgató
+Logisztikai szakértő
+Logisztikai ügyintéző
+Logisztikai vezető
+Menedzser asszisztens
+Minőségbiztosítási mérnök
+Minőségbiztosítási technikus
+Minőségbiztosítási vezető
+Minőségellenőr/Laboráns
+Minőségellenőrzési csoportvezető
+Minőségellenőrzési mérnök
+Minőségellenőrzési technikus
+Minőségellenőrzési vezető
+Minőségügyi igazgató
+Munkakör
+Műszaki igazgató
+Műszaki mérnök
+Műszaki technológus
+Műszaki ügyintéző
+Műszaki vevőszolgálati szakértő
+Műszaki vevőszolgálati ügyintéző
+Műszaki vezető/Főmérnök
+Műszerész
+Nehézgép kezelő
+Oktató/Tréner
+Pénzügyi szakértő
+Pénzügyi ügyintéző
+Pénzügyi vezető
+PR/Kommunikációs szakértő
+PR/Kommunikációs vezető
+Programozó/Szoftverfejlesztő
+Projekt asszisztens
+Projektmenedzser
+Projektmenedzsment vezető
+Raktári csoport/művezető
+Raktárkezelő/Raktáros
+Raktárvezető
+Recepciós/Gondnok
+Rendszerszervező/Üzleti elemző
+Segédmunkás
+Stratégiai beszerző
+Stratégiai/Üzletfejlesztési igazgató
+Stratégiai/Üzletfejlesztési szakértő
+Stratégiai/Üzletfejlesztési vezető
+Szállítási vezető
+Szállításszervező/Diszpécser
+Számviteli szakértő
+Számviteli ügyintéző
+Számviteli vezető
+Személy- és vagyonőr
+Személygépkocsivezető
+Személyzetfejlesztési/Képzési szakértő
+Szerelő szakmunkás
+Szerszám készítő/karbantartó
+Szerszám mérnök
+Takarító
+Targoncakezelő/Anyagmozgató
+Tehergépjármű sofőr
+Termék/szolgáltatás fejlesztő mérnök
+Termelés mérnök
+Termelési asszisztens
+Termelési csoport/művezető
+Termelési igazgató
+Termelési műszakvezető
+Termelési vezető
+Termeléstervezési vezető
+Termeléstervező
+Teszt mérnök
+Titkár/Titkárnő
+Titkárságvezető
+Toborzási szakértő
+Treasury szakértő
+Ügyfélszolgálati/Call Center csoportvezető
+Ügyfélszolgálati/Call Center igazgató
+Ügyfélszolgálati/Call Center operátor
+Ügyfélszolgálati/Call Center szakértő
+Ügyfélszolgálati/Call Center vezető
+Üzem/Gyáregység vezető
+Üzemfenntartási mérnök
+Üzemfenntartási ügyintéző
+Üzemfenntartási vezető
+Vagyon/portfólio kezelő szakértő
+Vámügyintéző
+Villamos mérnök
+Villanyszerelő
+Vízvezeték és gázszerelő

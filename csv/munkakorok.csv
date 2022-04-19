@@ -1,0 +1,172 @@
+munkakorID;munkakorNev
+1;Adat/adatbázis szakértõ
+2;Adminisztrációs vezetõ/Irodavezetõ
+3;Adózási szakértõ
+4;Adózási vezetõ
+5;Alkalmazás rendszergazda
+6;Anyag/Készletgazdálkodási szakértõ
+7;Anyag/Készletgazdálkodó
+8;Anyagellátás/gazdálkodás vezetõ
+9;Anyagtervezõ/Diszponens
+10;Automatizálási/PLC mérnök
+11;Bejövõ áru ellenõr
+12;Belsõ ellenõr
+13;Belsõ ellenõrzési vezetõ
+14;Bér és juttatási szakértõ
+15;Bér- és TB ügyintézõ
+16;Beruházás mérnök/szakértõ
+17;Beruházási vezetõ
+18;Beszállítói minõségbiztosítási/SQD mérnök
+19;Beszerzési igazgató
+20;Beszerzési vezetõ
+21;Beszerzõ
+22;Beszerzõ szakértõ
+23;Betanított karbantartó/Karbantartó segéd
+24;Betanított munkás
+25;Biztonsági szakértõ
+26;Biztonsági vezetõ
+27;Bolti eladó/pénztáros
+28;BPR/Folyamatfejlesztési szakértõ
+29;BPR/Folyamatfejlesztési vezetõ
+30;CNC gépkezelõ/programozó
+31;Csomagolás mérnök
+32;Csomagoló
+33;EHS technikus
+34;EHS vezetõ
+35;EHS/Környezetvédelmi mérnök
+36;Energetikai mérnök
+37;Energetikai technikus
+38;Energetikai vezetõ
+39;ERP/SAP fejlesztõ
+40;ERP/SAP modulgazda
+41;Fejlesztés technikus
+42;Fejlesztési igazgató
+43;Fejlesztési ügyintézõ
+44;Fejlesztési vezetõ
+45;Festõ
+46;Flottakezelõ
+47;Fordító/tolmács
+48;Fõkönyvelõ/Számviteli igazgató
+49;Gazdasági/Pénzügyi igazgató
+50;Gépbeállító
+51;Gépi forgácsoló/Esztergályos
+52;Gépkezelõ/Operátor (bonyolultabb berendezések)
+53;Gépkezelõ/Operátor (egyszerûbb berendezések)
+54;Géplakatos
+55;Gyártás/folyamat fejlesztõ mérnök
+56;Hegesztõ
+57;Hegesztõ mérnök
+58;HR generalista
+59;HR igazgató
+60;HR ügyintézõ
+61;HR üzleti partner
+62;HR vezetõ
+63;Informatikai igazgató
+64;IT biztonsági szakértõ
+65;IT fejlesztési vezetõ
+66;IT operátor
+67;IT projektvezetõ
+68;IT üzemeltetési vezetõ
+69;Jogász/jogtanácsos
+70;Jogi vezetõ
+71;Karbantartási csoport/mûvezetõ
+72;Karbantartási igazgató
+73;Karbantartási ügyintézõ
+74;Karbantartási vezetõ
+75;Karbantartó mérnök
+76;Karbantartó szakmunkás (bonyolultabb szakma)
+77;Karbantartó szakmunkás (egyszerûbb szakma)
+78;Karbantartó technikus
+79;Kertész
+80;Kontroller
+81;Kontrolling vezetõ
+82;Könyvelõ
+83;Közbeszerzési/pályázati szakértõ
+84;Laborvezetõ
+85;Lean/SixSigma/Kaizen mérnök
+86;Logisztikai igazgató
+87;Logisztikai szakértõ
+88;Logisztikai ügyintézõ
+89;Logisztikai vezetõ
+90;Menedzser asszisztens
+91;Minõségbiztosítási mérnök
+92;Minõségbiztosítási technikus
+93;Minõségbiztosítási vezetõ
+94;Minõségellenõr/Laboráns
+95;Minõségellenõrzési csoportvezetõ
+96;Minõségellenõrzési mérnök
+97;Minõségellenõrzési technikus
+98;Minõségellenõrzési vezetõ
+99;Minõségügyi igazgató
+100;Munkakör
+101;Mûszaki igazgató
+102;Mûszaki mérnök
+103;Mûszaki technológus
+104;Mûszaki ügyintézõ
+105;Mûszaki vevõszolgálati szakértõ
+106;Mûszaki vevõszolgálati ügyintézõ
+107;Mûszaki vezetõ/Fõmérnök
+108;Mûszerész
+109;Nehézgép kezelõ
+110;Oktató/Tréner
+111;Pénzügyi szakértõ
+112;Pénzügyi ügyintézõ
+113;Pénzügyi vezetõ
+114;PR/Kommunikációs szakértõ
+115;PR/Kommunikációs vezetõ
+116;Programozó/Szoftverfejlesztõ
+117;Projekt asszisztens
+118;Projektmenedzser
+119;Projektmenedzsment vezetõ
+120;Raktári csoport/mûvezetõ
+121;Raktárkezelõ/Raktáros
+122;Raktárvezetõ
+123;Recepciós/Gondnok
+124;Rendszerszervezõ/Üzleti elemzõ
+125;Segédmunkás
+126;Stratégiai beszerzõ
+127;Stratégiai/Üzletfejlesztési igazgató
+128;Stratégiai/Üzletfejlesztési szakértõ
+129;Stratégiai/Üzletfejlesztési vezetõ
+130;Szállítási vezetõ
+131;Szállításszervezõ/Diszpécser
+132;Számviteli szakértõ
+133;Számviteli ügyintézõ
+134;Számviteli vezetõ
+135;Személy- és vagyonõr
+136;Személygépkocsivezetõ
+137;Személyzetfejlesztési/Képzési szakértõ
+138;Szerelõ szakmunkás
+139;Szerszám készítõ/karbantartó
+140;Szerszám mérnök
+141;Takarító
+142;Targoncakezelõ/Anyagmozgató
+143;Tehergépjármû sofõr
+144;Termék/szolgáltatás fejlesztõ mérnök
+145;Termelés mérnök
+146;Termelési asszisztens
+147;Termelési csoport/mûvezetõ
+148;Termelési igazgató
+149;Termelési mûszakvezetõ
+150;Termelési vezetõ
+151;Termeléstervezési vezetõ
+152;Termeléstervezõ
+153;Teszt mérnök
+154;Titkár/Titkárnõ
+155;Titkárságvezetõ
+156;Toborzási szakértõ
+157;Treasury szakértõ
+158;Ügyfélszolgálati/Call Center csoportvezetõ
+159;Ügyfélszolgálati/Call Center igazgató
+160;Ügyfélszolgálati/Call Center operátor
+161;Ügyfélszolgálati/Call Center szakértõ
+162;Ügyfélszolgálati/Call Center vezetõ
+163;Üzem/Gyáregység vezetõ
+164;Üzemfenntartási mérnök
+165;Üzemfenntartási ügyintézõ
+166;Üzemfenntartási vezetõ
+167;Vagyon/portfólio kezelõ szakértõ
+168;Vámügyintézõ
+169;Villamos mérnök
+170;Villanyszerelõ
+171;Vízvezeték és gázszerelõ

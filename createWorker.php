@@ -19,7 +19,8 @@
 include_once "header.php";
 
 session_start();
-require "connection.php";
+//require "connection.php";
+$szervegysegek = mysqli_query($conn,"select * from szervegys");
 
 
 ?>
@@ -59,11 +60,18 @@ require "connection.php";
                         <ul id="szervEgys" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                             <?php
 
-                            for ($i = 0; $i < 3; $i++) {
-                                $szervezEgys = "szervEgys" + $i;
-                                echo '<li>' + $szervezEgys + '<a class="dropdown-item">Action</a></li>';
-                                //ide kell betölteni szervezeti egységeket
+                            //  exception
+                            $szervegyseg = mysqli_fetch_array($szervegysegek);
+                            
+
+                            if(mysqli_num_rows($szervegysegek)>0){
+                                while($row = mysqli_fetch_assoc($szervegysegek)){
+                                    echo '<li><a class="dropdown-item"> '+ $szervegyseg['szervEgysNev'] +'</a></li>';
+                                }
+                            }else{
+                                echo "0 results ";
                             }
+
                             ?>
                         </ul>
                     </div><br>
@@ -94,11 +102,6 @@ require "connection.php";
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
                     </div>
-
-
-
-
-
                 </div>
             </form>
         </div>
