@@ -49,8 +49,19 @@ session_start();
                         <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Munkakörök* </button>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
                             <?php
-                            for ($i = 0; $i < 3; $i++) {    //ide kell betölteni munkaköröket
-                                echo '<li><a class="dropdown-item" href="#">Action</a></li>';
+                            require_once "connection.php";
+                            $sql = "SELECT * FROM munkakorok";
+                            $records = mysqli_query($conn,$sql);
+                            
+
+                            if (mysqli_num_rows($records) > 0) {
+                                while($row = mysqli_fetch_assoc($records)){
+                                    //echo '<li><a class="dropdown-item" href="#">'+ "Szia" +'</a></li>';
+                                    echo '<li><a class="dropdown-item" href="#">',$row["munkakorNev"],'</a></li>';
+                                    //echo '<li>< class="dropdown-item"> '+ $row['szervEgysNev'] +'</li>';
+                                }
+                            } else {
+                                echo "0 results ";
                             }
                             ?></ul>
                     </div><br>
@@ -63,7 +74,7 @@ session_start();
                             require_once "connection.php";
                             $sql = "SELECT * FROM szervegys";
                             $records = mysqli_query($conn,$sql);
-                            $szervegyseg = mysqli_fetch_array($records);
+                            
 
                             if (mysqli_num_rows($records) > 0) {
                                 while($row = mysqli_fetch_assoc($records)){
