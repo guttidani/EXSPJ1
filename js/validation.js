@@ -1,13 +1,43 @@
-const vezetekNev = document.getElementById('vezetekNev')
-const keresztNev = document.getElementById('keresztNev')
-const bruttoBer = document.getElementById('bruttoBer')
-const adoAzon = document.getElementById('adoAzon')
-const taj = document.getElementById('taj')
-const bankSzamla = document.getElementById('bankSzamla')
+(function ($) {
+    $.fn.inputFilter = function (callback, errMsg) {
+        return this.on("input keydown keyup mousedown mouseup select contextmenu drop focusout", function (e) {
+            if (callback(this.value)) {
+                // Accepted value
+                if (["keydown", "mousedown", "focusout"].indexOf(e.type) >= 0) {
+                    $(this).removeClass("input-error");
+                    this.setCustomValidity("");
+                }
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+                // Rejected value - restore the previous one
+                $(this).addClass("input-error");
+                this.setCustomValidity(errMsg);
+                this.reportValidity();
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            } else {
+                // Rejected value - nothing to restore
+                this.value = "";
+            }
+        });
+    };
+}(jQuery));
 
-form.addEventListener('submit', (e)=>{
-    let messages = []
-    if(vezetekNev.value === '' || vezetekNev.value == null){
-        messages.push('A név kötelező')
-    }
-})
+
+$("#bruttoBer").inputFilter(function (value) {
+    return /^-?\d*$/.test(value);
+}, "Számot lehet csak megadni");
+$("#adoAzon").inputFilter(function (value) {
+    return /^-?\d*$/.test(value);
+}, "Számot lehet csak megadni");
+$("#taj").inputFilter(function (value) {
+    return /^-?\d*$/.test(value);
+}, "Számot lehet csak megadni"); 
+$("#bankSzamla").inputFilter(function (value) {
+    return /^-?\d*$/.test(value);
+}, "Számot lehet csak megadni");
+//--------------
+
+//--------------

@@ -9,18 +9,17 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="js/validation.js"></script>
     <title>Dolgozó felvétele</title>
 </head>
 
 
 <?php
-include "header.php";
+include_once "header.php";
 
 session_start();
-include "connection.php";
-if (isset($_POST[""])) {
-}
+require "connection.php";
 
 
 ?>
@@ -29,69 +28,79 @@ if (isset($_POST[""])) {
         <div class="container-xl col">
             <!-- input form -->
             <!-- ID ne felejtsd -->
-            <div>
-                <div class="mid" style="font-size: 30px;">Dolgozó felvétele </div><br>
-                <div class="mid">A csillaggal jelölt mezőket kötelező kitölteni</div><br>
-                <!-- név -->
+            <form id="createWorkerForm" action="submit">
+                <div id="errorShowDiv"></div>
                 <div>
-                    <div class=" input-group input-group-sm mb-3 inputField">
-                        <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév</span>
-                        <input id="vezetekNev" name="vezetekNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Kovács" required>
+                    <div class="mid" style="font-size: 30px;">Dolgozó felvétele </div><br>
+                    <div class="mid">A csillaggal jelölt mezőket kötelező kitölteni</div><br>
+                    <!-- név -->
+                    <div>
+                        <div class=" input-group input-group-sm mb-3 inputField">
+                            <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév</span>
+                            <input id="vezetekNev" name="vezetekNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Kovács" required>
+                        </div>
+                        <div class="input-group input-group-sm mb-3 inputField">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév</span>
+                            <input id="keresztNev" name="keresztNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="*István" required>
+                        </div>
                     </div>
+                    <!-- dropdowns -->
+                    <div class="dropdown inputField">
+                        <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Munkakörök* </button>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                            <?php
+                            for ($i = 0; $i < 3; $i++) {    //ide kell betölteni munkaköröket
+                                echo '<li><a class="dropdown-item" href="#">Action</a></li>';
+                            }
+                            ?></ul>
+                    </div><br>
+                    <div id="dropdownMenuButton2" class="dropdown inputField">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Szervezeti egységek</button>
+                        <ul id="szervEgys" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                            <?php
+
+                            for ($i = 0; $i < 3; $i++) {
+                                $szervezEgys = "szervEgys" + $i;
+                                echo '<li>' + $szervezEgys + '<a class="dropdown-item">Action</a></li>';
+                                //ide kell betölteni szervezeti egységeket
+                            }
+                            ?>
+                        </ul>
+                    </div><br>
+                    <!-- Bruttóbér -->
                     <div class="input-group input-group-sm mb-3 inputField">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév</span>
-                        <input id="keresztNev" name="keresztNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="*István">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Bruttóbér</span>
+                        <input id="bruttoBer" maxlength="9" name="bruttoBer" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="123 456Ft/hónap" required>
                     </div>
+                    <!-- adóazonosító -->
+                    <div class="input-group input-group-sm mb-3 inputField">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Adóazonosító</span>
+                        <input id="adoAzon" name="adoAzon" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="10" maxlength="10" placeholder="0123456789" required>
+                    </div>
+                    <!-- TAJ -->
+                    <div class="input-group input-group-sm mb-3 inputField">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">TAJ szám</span>
+                        <input id="taj" name="taj" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="9" maxlength="9" placeholder="123 456 789" required>
+                    </div>
+                    <!-- Bankszámlaszám -->
+                    <div class="input-group input-group-sm mb-3 inputField">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Bankszámla szám</span>
+                        <input id="bankSzamla" name="bankSzamla" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="24" maxlength="24" placeholder="00001111-22223333-44445555" required>
+                    </div>
+                    <br>
+                    <!-- gombok -->
+                    <div class="mid">
+                        <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
+                    </div>
+
+
+
+
+
                 </div>
-                <!-- dropdowns -->
-                <div class="dropdown inputField">
-                    <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Munkakörök* </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-                        <?php
-                        for ($i = 0; $i < 3; $i++) {    //ide kell betölteni munkaköröket
-                            echo '<li><a class="dropdown-item" href="#">Action</a></li>';
-                        }
-                        ?></ul>
-                </div><br>
-                <div id="dropdownMenuButton2" class="dropdown inputField">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Szervezeti egységek* </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                        <?php
-                        for ($i = 0; $i < 3; $i++) {
-                            echo '<li><a class="dropdown-item">Action</a></li>';
-                            //ide kell betölteni szervezeti egységeket
-                        }
-                        ?>
-                    </ul>
-                </div><br>
-                <!-- Bruttóbér -->
-                <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Bruttóbér</span>
-                    <input id="bruttoBer" maxlength="5" name="bruttoBer" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="123 456Ft/hónap">
-                </div>
-                <!-- adóazonosító -->
-                <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Adóazonosító</span>
-                    <input id="adoAzon" name="adoAzon" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="10" placeholder="0123456789">
-                </div>
-                <!-- TAJ -->
-                <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">TAJ szám</span>
-                    <input id="taj" name="taj" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="9" placeholder="123 456 789">
-                </div>
-                <!-- Bankszámlaszám -->
-                <div class="input-group input-group-sm mb-3 inputField">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Bankszámla szám</span>
-                    <input id="bankSzamla" name="bankSzamla" type="number" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="24" placeholder="00001111-22223333-44445555">
-                </div>
-                <br>
-                <!-- gombok -->
-                <div class="mid">
-                    <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button id="megseBtn" type="button" class="btn btn-primary">Mégse</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
