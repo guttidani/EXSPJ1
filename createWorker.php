@@ -19,8 +19,7 @@
 include_once "header.php";
 
 session_start();
-//require "connection.php";
-$szervegysegek = mysqli_query($conn,"select * from szervegys");
+
 
 
 ?>
@@ -55,45 +54,55 @@ $szervegysegek = mysqli_query($conn,"select * from szervegys");
                             }
                             ?></ul>
                     </div><br>
+
                     <div id="dropdownMenuButton2" class="dropdown inputField">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Szervezeti egységek</button>
                         <ul id="szervEgys" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                             <?php
 
-                            //  exception
-                            $szervegyseg = mysqli_fetch_array($szervegysegek);
-                            
+                            require_once "connection.php";
+                            $sql = "SELECT * FROM szervegys";
+                            $records = mysqli_query($conn,$sql);
+                            $szervegyseg = mysqli_fetch_array($records);
 
-                            if(mysqli_num_rows($szervegysegek)>0){
-                                while($row = mysqli_fetch_assoc($szervegysegek)){
-                                    echo '<li><a class="dropdown-item"> '+ $szervegyseg['szervEgysNev'] +'</a></li>';
+                            if (mysqli_num_rows($records) > 0) {
+                                while($row = mysqli_fetch_assoc($records)){
+                                    //echo '<li><a class="dropdown-item" href="#">'+ "Szia" +'</a></li>';
+                                    echo '<li><a class="dropdown-item" href="#">',$row["szervEgysNev"],'</a></li>';
+                                    //echo '<li>< class="dropdown-item"> '+ $row['szervEgysNev'] +'</li>';
                                 }
-                            }else{
+                            } else {
                                 echo "0 results ";
                             }
+
+
+                            //error_log(mysqli_num_rows($result));
 
                             ?>
                         </ul>
                     </div><br>
+                    <?php
+
+                    ?>
                     <!-- Bruttóbér -->
                     <div class="input-group input-group-sm mb-3 inputField">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Bruttóbér</span>
-                        <input id="bruttoBer" maxlength="9" name="bruttoBer" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="123 456Ft/hónap" required>
+                        <input id="bruttoBer" maxlength="9" name="bruttoBer" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="123 456 Ft/hónap*" required>
                     </div>
                     <!-- adóazonosító -->
                     <div class="input-group input-group-sm mb-3 inputField">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Adóazonosító</span>
-                        <input id="adoAzon" name="adoAzon" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="10" maxlength="10" placeholder="0123456789" required>
+                        <input id="adoAzon" name="adoAzon" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="10" maxlength="10" placeholder="0123456789*" required>
                     </div>
                     <!-- TAJ -->
                     <div class="input-group input-group-sm mb-3 inputField">
                         <span class="input-group-text" id="inputGroup-sizing-sm">TAJ szám</span>
-                        <input id="taj" name="taj" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="9" maxlength="9" placeholder="123 456 789" required>
+                        <input id="taj" name="taj" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="9" maxlength="9" placeholder="123 456 789*" required>
                     </div>
                     <!-- Bankszámlaszám -->
                     <div class="input-group input-group-sm mb-3 inputField">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Bankszámla szám</span>
-                        <input id="bankSzamla" name="bankSzamla" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="24" maxlength="24" placeholder="00001111-22223333-44445555" required>
+                        <input id="bankSzamla" name="bankSzamla" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="24" maxlength="24" placeholder="00001111-22223333-44445555*" required>
                     </div>
                     <br>
                     <!-- gombok -->

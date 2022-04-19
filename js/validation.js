@@ -1,3 +1,5 @@
+//https://stackoverflow.com/questions/995183/how-to-allow-only-numeric-0-9-in-html-inputbox-using-jquery
+
 (function ($) {
     $.fn.inputFilter = function (callback, errMsg) {
         return this.on("input keydown keyup mousedown mouseup select contextmenu drop focusout", function (e) {
