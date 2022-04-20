@@ -46,7 +46,7 @@ session_start();
                     </div>
                     <!-- dropdowns -->
                     <div class="dropdown inputField">
-                        <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Munkakörök* </button>
+                        <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Munkakörök</button>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
                             <?php
                             require_once "connection.php";
@@ -57,7 +57,7 @@ session_start();
                             if (mysqli_num_rows($records) > 0) {
                                 while($row = mysqli_fetch_assoc($records)){
                                     //echo '<li><a class="dropdown-item" href="#">'+ "Szia" +'</a></li>';
-                                    echo '<li><a class="dropdown-item" href="#">',$row["munkakorNev"],'</a></li>';
+                                    echo '<li><a class="dropdown-item" id="',$row["munkakorID"],'" href="#">',$row["munkakorNev"],'</a></li>';
                                     //echo '<li>< class="dropdown-item"> '+ $row['szervEgysNev'] +'</li>';
                                 }
                             } else {
@@ -79,7 +79,7 @@ session_start();
                             if (mysqli_num_rows($records) > 0) {
                                 while($row = mysqli_fetch_assoc($records)){
                                     //echo '<li><a class="dropdown-item" href="#">'+ "Szia" +'</a></li>';
-                                    echo '<li><a class="dropdown-item" href="#">',$row["szervEgysNev"],'</a></li>';
+                                    echo '<li><a class="dropdown-item" id="',$row["szervegysID"],'" href="#">',$row["szervEgysNev"],'</a></li>';
                                     //echo '<li>< class="dropdown-item"> '+ $row['szervEgysNev'] +'</li>';
                                 }
                             } else {
