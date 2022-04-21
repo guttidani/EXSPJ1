@@ -16,5 +16,4 @@ if ($conn->connect_error) {
 }
 //echo "connection succesful";
 error_log("Connection succesful", 0);
-
 ?>
