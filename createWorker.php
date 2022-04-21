@@ -51,13 +51,13 @@ session_start();
                             <?php
                             require_once "connection.php";
                             $sql = "SELECT * FROM munkakorok";
-                            $records = mysqli_query($conn,$sql);
-                            
+                            $records = mysqli_query($conn, $sql);
+
 
                             if (mysqli_num_rows($records) > 0) {
-                                while($row = mysqli_fetch_assoc($records)){
+                                while ($row = mysqli_fetch_assoc($records)) {
                                     //echo '<li><a class="dropdown-item" href="#">'+ "Szia" +'</a></li>';
-                                    echo '<li><a class="dropdown-item" id="',$row["munkakorID"],'" href="#">',$row["munkakorNev"],'</a></li>';
+                                    echo '<li><a class="dropdown-item" id="', $row["munkakorID"], '" href="#">', $row["munkakorNev"], '</a></li>';
                                     //echo '<li>< class="dropdown-item"> '+ $row['szervEgysNev'] +'</li>';
                                 }
                             } else {
@@ -73,13 +73,13 @@ session_start();
 
                             require_once "connection.php";
                             $sql = "SELECT * FROM szervegys";
-                            $records = mysqli_query($conn,$sql);
-                            
+                            $records = mysqli_query($conn, $sql);
+
 
                             if (mysqli_num_rows($records) > 0) {
-                                while($row = mysqli_fetch_assoc($records)){
+                                while ($row = mysqli_fetch_assoc($records)) {
                                     //echo '<li><a class="dropdown-item" href="#">'+ "Szia" +'</a></li>';
-                                    echo '<li><a class="dropdown-item" id="',$row["szervegysID"],'" href="#">',$row["szervEgysNev"],'</a></li>';
+                                    echo '<li><a class="dropdown-item" id="', $row["szervegysID"], '" href="#">', $row["szervEgysNev"], '</a></li>';
                                     //echo '<li>< class="dropdown-item"> '+ $row['szervEgysNev'] +'</li>';
                                 }
                             } else {
@@ -119,6 +119,12 @@ session_start();
                     <!-- gombok -->
                     <div class="mid">
                         <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
+                        <?php
+                            require_once "connection.php";
+                            $sqlInsert = "INSERT INTO `dolgozok`(`ID`, `vezetekNev`, `keresztNev`, `munnkakorID`, `szervEgysID`, `bruttoBer`, `adoazonosito`, `TAJ`, `bankSzamla`) 
+                                            VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]')";
+                            
+                        ?>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
                     </div>
