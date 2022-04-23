@@ -31,13 +31,13 @@
 $("#bruttoBer").inputFilter(function (value) {
     return /^-?\d*$/.test(value);
 }, "Számot lehet csak megadni");
-$("#adoAzon").inputFilter(function (value) {
+$("#adoazonosito").inputFilter(function (value) {
     return /^-?\d*$/.test(value);
 }, "Számot lehet csak megadni");
-$("#taj").inputFilter(function (value) {
+$("#TAJ").inputFilter(function (value) {
     return /^-?\d*$/.test(value);
 }, "Számot lehet csak megadni"); 
-$("#bankSzamla").inputFilter(function (value) {
+$("#bankszamlaszam").inputFilter(function (value) {
     return /^-?\d*$/.test(value);
 }, "Számot lehet csak megadni");
 //--------------
