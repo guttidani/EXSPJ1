@@ -27,6 +27,18 @@
     };
 }(jQuery));
 
+function submitSetEnable() {
+
+    var btn = document.getElementById("createWorkerBtn");
+    if (document.getElementById("szervEgysID").value != 0 && document.getElementById("munkakorID").value != 0) {
+        btn.disabled = false;
+        console.log("set disabled false");
+
+    } else {
+        btn.disabled = true;
+        console.log("set disabled true");
+    }
+}
 
 $("#bruttoBer").inputFilter(function (value) {
     return /^-?\d*$/.test(value);
@@ -36,7 +48,7 @@ $("#adoazonosito").inputFilter(function (value) {
 }, "Számot lehet csak megadni");
 $("#TAJ").inputFilter(function (value) {
     return /^-?\d*$/.test(value);
-}, "Számot lehet csak megadni"); 
+}, "Számot lehet csak megadni");
 $("#bankszamlaszam").inputFilter(function (value) {
     return /^-?\d*$/.test(value);
 }, "Számot lehet csak megadni");

@@ -53,8 +53,8 @@ $munkakor_dropdown = "Munkakörök";
                         </div>
                         <!-- munkakorok dropdowns -->
                         <div class="dropdown inputField">
-                            <select class="form-select" aria-label="Default select example" id="munkakorID" name="munkakorID" required>
-                                <option selected>Munkakörök</option>
+                            <select class="form-select" aria-label="Default select example" id="munkakorID" name="munkakorID" onchange="submitSetEnable()" required>
+                                <option value=0 selected>Munkakörök</option>
                                 <?php
                                 require_once "connection.php";
                                 $sql = "SELECT * FROM munkakorok";
@@ -73,8 +73,8 @@ $munkakor_dropdown = "Munkakörök";
                         <br>
                         <!-- szervegyseg dropdowns -->
                         <div class="dropdown inputField">
-                            <select class="form-select" aria-label="Default select example" id="szervEgysID" name="szervEgysID" required>
-                                <option selected>Szervezeti egységek</option>
+                            <select class="form-select" aria-label="Default select example" id="szervEgysID" name="szervEgysID" onchange="submitSetEnable()" required>
+                                <option value=0 selected>Szervezeti egységek</option>
                                 <?php
                                 require_once "connection.php";
                                 $sql = "SELECT * FROM szervegys";
@@ -114,13 +114,16 @@ $munkakor_dropdown = "Munkakörök";
                         <br>
                         <!-- gombok -->
                         <div class="mid">
-                            <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
+                            <button id="createWorkerBtn" type="submit" class="btn btn-primary" disabled>Mentés</button>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
+                            <!-- gombok -->
+
                             <br>
                             <?php
                             //Select max id +1 = param_ID
                             // trim($_post[values]) függvényt megnézni
+
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $sql = "SELECT MAX(ID) FROM dolgozok";
                                 $records = mysqli_query($conn, $sql);
@@ -132,7 +135,7 @@ $munkakor_dropdown = "Munkakörök";
                                 }
 
                                 $sqlInsert = "INSERT INTO dolgozok(ID, vezetekNev, keresztNev, munnkakorID, szervEgysID, bruttoBer, adoazonosito, TAJ, bankSzamla) 
-                                VALUES (?,?,?,?,?,?,?,?,?)";
+                                    VALUES (?,?,?,?,?,?,?,?,?)";
                                 if ($stmt = mysqli_prepare($conn, $sqlInsert)) {
                                     // bind variables to the prepered statement as paramaters
                                     mysqli_stmt_bind_param($stmt, "issiiisss", $param_ID, $param_vezetekNev, $param_keresztNev, $param_munkakorID, $param_szervEgysID, $param_bruttoBer, $param_TAJ, $param_adoazonosito, $param_bankszamlaszam);
@@ -162,6 +165,8 @@ $munkakor_dropdown = "Munkakörök";
                                     mysqli_stmt_close($stmt);
                                 }
                             }
+
+
                             mysqli_close($conn);
                             ?>
 
