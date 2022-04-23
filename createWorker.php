@@ -19,13 +19,14 @@ session_start();
 
 $vezetekNev = $_POST["vezetekNev"];
 $keresztNev = $_POST["keresztNev"];
-//$munkakorID = $_POST["munkakorID"];
-//$szervEgysID = $_POST["szervEgysID"];
+$munkakorID = $_POST["munkakorID"];
+$szervEgysID = $_POST["szervEgysID"];
 $bruttoBer = $_POST["bruttoBer"];
 $adoazonosito = $_POST["adoazonosito"];
 $TAJ = $_POST["TAJ"];
 $bankszamlaszam = $_POST["bankszamlaszam"];
-
+$szerv_dropdown = "Szervezeti egységek";
+$munkakor_dropdown = "Munkakörök";
 ?>
 
 <body>
@@ -43,50 +44,51 @@ $bankszamlaszam = $_POST["bankszamlaszam"];
                         <div>
                             <div class=" input-group input-group-sm mb-3 inputField">
                                 <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév</span>
-                                <input id="vezetekNev" name="vezetekNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Kovács" value="<?php echo $vezetekNev ?>" required>
+                                <input id="vezetekNev" name="vezetekNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Kovács" required>
                             </div>
                             <div class="input-group input-group-sm mb-3 inputField">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév</span>
                                 <input id="keresztNev" name="keresztNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="*István" required>
                             </div>
                         </div>
-                        <!-- dropdowns -->
+                        <!-- munkakorok dropdowns -->
                         <div class="dropdown inputField">
-                            <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Munkakörök</button>
-                            <ul id="munkakorID" name="munkakorID" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                            <select class="form-select" aria-label="Default select example" id="munkakorID" name="munkakorID" required>
+                                <option selected>Munkakörök</option>
                                 <?php
                                 require_once "connection.php";
                                 $sql = "SELECT * FROM munkakorok";
                                 $records = mysqli_query($conn, $sql);
 
-
                                 if (mysqli_num_rows($records) > 0) {
                                     while ($row = mysqli_fetch_assoc($records)) {
-                                        echo '<li><a class="dropdown-item" id="', $row["munkakorID"], '" href="#">', $row["munkakorNev"], '</a></li>';
-                                    }
-                                } else {
-                                    echo "0 results ";
-                                }
-                                ?></ul>
-                        </div>
-                        <br>
-                        <div id="dropdownMenuButton2" class="dropdown inputField">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Szervezeti egységek</button>
-                            <ul id="szervEgysID" name="szervEgysID" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                                <?php
-
-                                $sql = "SELECT * FROM szervegys";
-                                $records = mysqli_query($conn, $sql);
-
-                                if (mysqli_num_rows($records) > 0) {
-                                    while ($row = mysqli_fetch_assoc($records)) {
-                                        echo '<li><a class="dropdown-item" id="', $row["szervegysID"], '" href="#">', $row["szervEgysNev"], '</a></li>';
+                                        echo '<option class="dropdown-item" value="', $row["munkakorID"], '">', $row["munkakorNev"], '</option>';
                                     }
                                 } else {
                                     echo "0 results ";
                                 }
                                 ?>
-                            </ul>
+                            </select>
+                        </div>
+                        <br>
+                        <!-- szervegyseg dropdowns -->
+                        <div class="dropdown inputField">
+                            <select class="form-select" aria-label="Default select example" id="szervEgysID" name="szervEgysID" required>
+                                <option selected>Szervezeti egységek</option>
+                                <?php
+                                require_once "connection.php";
+                                $sql = "SELECT * FROM szervegys";
+                                $records = mysqli_query($conn, $sql);
+
+                                if (mysqli_num_rows($records) > 0) {
+                                    while ($row = mysqli_fetch_assoc($records)) {
+                                        echo '<option class="dropdown-item" value="', $row["szervegysID"], '">', $row["szervEgysNev"], '</option>';
+                                    }
+                                } else {
+                                    echo "0 results ";
+                                }
+                                ?>
+                            </select>
                         </div>
                         <br>
                         <!-- Bruttóbér -->
@@ -113,38 +115,47 @@ $bankszamlaszam = $_POST["bankszamlaszam"];
                         <!-- gombok -->
                         <div class="mid">
                             <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
+                            <br>
                             <?php
-                            //Select max id +1
+                            //Select max id +1 = param_ID
                             // trim($_post[values]) függvényt megnézni
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                $sql = "SELECT MAX(ID) FROM dolgozok";
+                                $records = mysqli_query($conn, $sql);
+                                if (mysqli_num_rows($records) < 0) {
+                                    $ID = 1;
+                                } else {
+                                    $row = mysqli_fetch_row($records);
+                                    $ID = $row[0];
+                                }
 
                                 $sqlInsert = "INSERT INTO dolgozok(ID, vezetekNev, keresztNev, munnkakorID, szervEgysID, bruttoBer, adoazonosito, TAJ, bankSzamla) 
                                 VALUES (?,?,?,?,?,?,?,?,?)";
                                 if ($stmt = mysqli_prepare($conn, $sqlInsert)) {
                                     // bind variables to the prepered statement as paramaters
-                                    mysqli_stmt_bind_param($stmt,"issiiisss",$param_ID,$param_vezetekNev,$param_keresztNev,$param_munkakorID,$param_szervEgysID,$param_bruttoBer,$param_TAJ,$param_adoazonosito,$param_bankszamlaszam);
+                                    mysqli_stmt_bind_param($stmt, "issiiisss", $param_ID, $param_vezetekNev, $param_keresztNev, $param_munkakorID, $param_szervEgysID, $param_bruttoBer, $param_TAJ, $param_adoazonosito, $param_bankszamlaszam);
                                     //set parameters
-
-                                    $param_ID = 1;
-                                    //$param_ID = $ID;
-
+                                    $param_ID = (int)$ID + 1;
                                     $param_vezetekNev = $vezetekNev;
                                     $param_keresztNev = $keresztNev;
 
-                                    $param_munkakorID = 1;
-                                    //$param_munkakorID = (int)$munkakorID;
+                                    //$param_munkakorID = 1;
+                                    $param_munkakorID = (int)$munkakorID;
 
-                                    $param_szervEgysID = 1;
-                                    //$param_szervEgysID = (int)$szervEgysID;
+                                    //$param_szervEgysID = 1;
+                                    $param_szervEgysID = (int)$szervEgysID;
 
                                     $param_bruttoBer = (int)$bruttoBer;
                                     $param_adoazonosito = $adoazonosito;
                                     $param_TAJ = $TAJ;
                                     $param_bankszamlaszam = $bankszamlaszam;
 
-                                    if(mysqli_stmt_execute($stmt)){
+                                    if (mysqli_stmt_execute($stmt)) {
                                         //redirect to index page
                                         //header("location: index.php");
+                                        echo "Sikeresen létrejött a Dolgozó";
                                     } else {
                                         //echo "Hoppá valami nem jó próbáld újra";
                                     }
@@ -153,8 +164,8 @@ $bankszamlaszam = $_POST["bankszamlaszam"];
                             }
                             mysqli_close($conn);
                             ?>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
+
+
                         </div>
                     </div>
                 </form>
