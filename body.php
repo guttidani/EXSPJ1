@@ -35,7 +35,6 @@
                                         <th data-priority="11" class="mid">Törlés</th>
                                     </tr>
                                 </thead>
-                                <button></button>
                                 <tbody>
                                     <?php
                                     require_once "connection.php";
@@ -50,6 +49,7 @@
                                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
                                     </svg></button>';
 
+                                    //$delete_sql = 'DELETE FROM dolgozok WHERE ID =' + (string)$row["ID"];
 
                                     if (mysqli_num_rows($records) > 0) {
                                         while ($row = mysqli_fetch_assoc($records)) {
@@ -57,8 +57,8 @@
                                             '<td>', $row["ID"], '</td>',
                                             '<td>', $row["vezetekNev"], '</td>',
                                             '<td>', $row["keresztNev"], '</td>',
-                                            '<td>', $row["munkakorID"], '</td>',
-                                            '<td>', $row["szervEgysID"], '</td>',
+                                            '<td>', $row["munkakorID"], '</td>', // select from munkakorok
+                                            '<td>', $row["szervEgysID"], '</td>', // select from szervegys
                                             '<td>', $row["bruttoBer"], '</td>',
                                             '<td>', $row["adoazonosito"], '</td>',
                                             '<td>', $row["TAJ"], '</td>',
