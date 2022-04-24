@@ -114,7 +114,6 @@ session_start();
                             <?php
                             //Select max id +1 = param_ID
                             // trim($_post[values]) függvényt megnézni
-
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $sql = "SELECT MAX(ID) FROM dolgozok";
                                 $records = mysqli_query($conn, $sql);
@@ -122,10 +121,10 @@ session_start();
                                     $ID = 1;
                                 } else {
                                     $row = mysqli_fetch_row($records);
-                                    $ID = $row[0];
+                                    $ID = $row[0] + 1;
                                 }
 
-                                $sqlInsert = "INSERT INTO dolgozok(ID, vezetekNev, keresztNev, munnkakorID, szervEgysID, bruttoBer, adoazonosito, TAJ, bankSzamla) 
+                                $sqlInsert = "INSERT INTO dolgozok(ID, vezetekNev, keresztNev, munkakorID, szervEgysID, bruttoBer, adoazonosito, TAJ, bankSzamla) 
                                     VALUES (?,?,?,?,?,?,?,?,?)";
 
                                 $vezetekNev = $_POST["vezetekNev"];
@@ -138,42 +137,46 @@ session_start();
                                 $bankszamlaszam = $_POST["bankszamlaszam"];
                                 $szerv_dropdown = "Szervezeti egységek";
                                 $munkakor_dropdown = "Munkakörök";
-                                
+
                                 if ($stmt = mysqli_prepare($conn, $sqlInsert)) {
+                                    echo "mysqli_prepare";
                                     // bind variables to the prepered statement as paramaters
-                                    mysqli_stmt_bind_param($stmt, "issiiisss", $param_ID, $param_vezetekNev, $param_keresztNev, $param_munkakorID, $param_szervEgysID, $param_bruttoBer, $param_TAJ, $param_adoazonosito, $param_bankszamlaszam);
+                                    mysqli_stmt_bind_param(
+                                        $stmt,
+                                        "issiiisss",
+                                        $param_ID,
+                                        $param_vezetekNev,
+                                        $param_keresztNev,
+                                        $param_munkakorID,
+                                        $param_szervEgysID,
+                                        $param_bruttoBer,
+                                        $param_adoazonosito,
+                                        $param_TAJ,
+                                        $param_bankszamlaszam
+                                    );
                                     //set parameters
-                                    $param_ID = (int)$ID + 1;
+                                    $param_ID = (int)$ID;
                                     $param_vezetekNev = $vezetekNev;
                                     $param_keresztNev = $keresztNev;
-
-                                    //$param_munkakorID = 1;
                                     $param_munkakorID = (int)$munkakorID;
-
-                                    //$param_szervEgysID = 1;
                                     $param_szervEgysID = (int)$szervEgysID;
-
                                     $param_bruttoBer = (int)$bruttoBer;
                                     $param_adoazonosito = $adoazonosito;
                                     $param_TAJ = $TAJ;
                                     $param_bankszamlaszam = $bankszamlaszam;
 
                                     if (mysqli_stmt_execute($stmt)) {
-                                        //redirect to index page
-                                        //header("location: index.php");
                                         echo "Sikeresen létrejött a Dolgozó";
                                     } else {
-                                        //echo "Hoppá valami nem jó próbáld újra";
+                                        echo "Hoppá valami nem jó próbáld újra";
                                     }
                                     mysqli_stmt_close($stmt);
                                 }
+                            } else {
+                                echo "request method fail";
                             }
-
-
                             mysqli_close($conn);
                             ?>
-
-
                         </div>
                     </div>
                 </form>
