@@ -17,7 +17,16 @@
 include_once "header.php";
 session_start();
 
-
+$vezetekNev = $_POST["vezetekNev"];
+$keresztNev = $_POST["keresztNev"];
+$munkakorID = $_POST["munkakorID"];
+$szervEgysID = $_POST["szervEgysID"];
+$bruttoBer = $_POST["bruttoBer"];
+$adoazonosito = $_POST["adoazonosito"];
+$TAJ = $_POST["TAJ"];
+$bankszamlaszam = $_POST["bankszamlaszam"];
+$szerv_dropdown = "Szervezeti egységek";
+$munkakor_dropdown = "Munkakörök";
 ?>
 
 <body>
@@ -127,18 +136,6 @@ session_start();
 
                                 $sqlInsert = "INSERT INTO dolgozok(ID, vezetekNev, keresztNev, munnkakorID, szervEgysID, bruttoBer, adoazonosito, TAJ, bankSzamla) 
                                     VALUES (?,?,?,?,?,?,?,?,?)";
-
-                                $vezetekNev = $_POST["vezetekNev"];
-                                $keresztNev = $_POST["keresztNev"];
-                                $munkakorID = $_POST["munkakorID"];
-                                $szervEgysID = $_POST["szervEgysID"];
-                                $bruttoBer = $_POST["bruttoBer"];
-                                $adoazonosito = $_POST["adoazonosito"];
-                                $TAJ = $_POST["TAJ"];
-                                $bankszamlaszam = $_POST["bankszamlaszam"];
-                                $szerv_dropdown = "Szervezeti egységek";
-                                $munkakor_dropdown = "Munkakörök";
-                                
                                 if ($stmt = mysqli_prepare($conn, $sqlInsert)) {
                                     // bind variables to the prepered statement as paramaters
                                     mysqli_stmt_bind_param($stmt, "issiiisss", $param_ID, $param_vezetekNev, $param_keresztNev, $param_munkakorID, $param_szervEgysID, $param_bruttoBer, $param_TAJ, $param_adoazonosito, $param_bankszamlaszam);

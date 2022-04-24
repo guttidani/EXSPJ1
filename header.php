@@ -23,6 +23,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="createWorker.php">Dolgozó felvétele</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Dolgozók listázása</a>
+					</li>
 				</ul>
 			</div>
 		</div>
