@@ -50,9 +50,6 @@
                                     if (mysqli_num_rows($records) > 0) {
                                         include "modals.php";
 
-                                        $delete_sql = 'DELETE FROM dolgozok WHERE ID = $row["ID"]';
-                                        mysqli_query($conn, $delete_sql);
-
                                         while ($row = mysqli_fetch_assoc($records)) {
                                             echo    '<tr id="', $row["ID"], '">',
                                             '<td>', $row["ID"], '</td>',
@@ -71,6 +68,8 @@
                                     } else {
                                         echo "0 results ";
                                     }
+
+                                    
 
                                     ?>
                                 </tbody>

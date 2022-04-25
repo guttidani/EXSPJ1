@@ -173,7 +173,7 @@ session_start();
                                     mysqli_stmt_close($stmt);
                                 }
                             } else {
-                                echo "request method fail";
+                                //echo "request method fail";
                             }
                             mysqli_close($conn);
                             ?>

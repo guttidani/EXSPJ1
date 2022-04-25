@@ -30,7 +30,20 @@
 function submitSetEnable() {
 
     var btn = document.getElementById("createWorkerBtn");
-    if (document.getElementById("szervEgysID").value != 0 && document.getElementById("munkakorID").value != 0) {
+    if ((document.getElementById("szervEgysID").value != 0 &&
+        document.getElementById("munkakorID").value != 0) && 
+        (document.getElementById("vezetekNev").value != null || 
+        document.getElementById("vezetekNev").value != "" )&&
+        (document.getElementById("keresztNev").value != null || 
+        document.getElementById("keresztNev").value != "" )&&
+        (document.getElementById("bruttoBer").value != null || 
+        document.getElementById("bruttoBer").value != "" )&&
+        (document.getElementById("adoazonosito").value != null || 
+        document.getElementById("adoazonosito").value != "" )&&
+        (document.getElementById("TAJ").value != null || 
+        document.getElementById("TAJ").value != "" )&&
+        (document.getElementById("bankszamlaszam").value != null || 
+        document.getElementById("bankszamlaszam").value != "" )) {
         btn.disabled = false;
         console.log("set disabled false");
 

@@ -2,6 +2,8 @@
 
 $editbtn = '<button class="btn"><i style="font-size:24px" class="fas">&#xf044;</i></button>';
 //$delete_ID = 1;
+
+
 $deletebtn = '<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
@@ -18,10 +20,23 @@ $deletebtn = '<button type="button" class="btn btn-outline-danger" data-bs-toggl
                     Biztosan törlöd?
                 </div>
                 <div class="modal-footer">
+                <form method="POST">
+                    <input type="hidden" name="_METHOD" value="DELETE">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <button id="delete" type="submit" onclick="return delete_dolgozo()" class="btn btn-danger">Törlés</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>';
-?>
+
+
+    if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['_METHOD'] == 'DELETE')) {
+        //$id = (int) $_POST['id'];
+        $id = 1;
+        $result = mysqli_query($conn,'DELETE FROM dolgozok WHERE ID='.$id);
+        if ($result !== false) {
+            exit;
+        }
+    }
