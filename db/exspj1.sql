@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2022 at 04:30 PM
+-- Generation Time: Apr 25, 2022 at 06:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `exspj1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dolgozok`
+--
+
+CREATE TABLE `dolgozok` (
+  `ID` int(11) NOT NULL,
+  `vezetekNev` varchar(25) NOT NULL,
+  `keresztNev` varchar(25) NOT NULL,
+  `munkakorID` int(11) NOT NULL,
+  `szervEgysID` int(11) NOT NULL,
+  `bruttoBer` int(9) NOT NULL,
+  `adoazonosito` varchar(10) NOT NULL,
+  `TAJ` varchar(9) NOT NULL,
+  `bankSzamla` varchar(24) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dolgozok`
+--
+
+INSERT INTO `dolgozok` (`ID`, `vezetekNev`, `keresztNev`, `munkakorID`, `szervEgysID`, `bruttoBer`, `adoazonosito`, `TAJ`, `bankSzamla`) VALUES
+(4, 'Favágó', 'Gábor', 8, 2, 222222222, '2222222222', '222222222', '222222222222222222222222'),
+(5, 'Nagy', 'Melinda', 5, 13, 111111111, '1111111111', '111111111', '111111111111111111111111');
 
 -- --------------------------------------------------------
 
@@ -260,6 +286,14 @@ INSERT INTO `szervegys` (`szervegysID`, `szervEgysNev`) VALUES
 --
 
 --
+-- Indexes for table `dolgozok`
+--
+ALTER TABLE `dolgozok`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `munkakorID` (`munkakorID`),
+  ADD UNIQUE KEY `szervEgysID` (`szervEgysID`);
+
+--
 -- Indexes for table `munkakorok`
 --
 ALTER TABLE `munkakorok`
@@ -276,6 +310,12 @@ ALTER TABLE `szervegys`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `dolgozok`
+--
+ALTER TABLE `dolgozok`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `munkakorok`
