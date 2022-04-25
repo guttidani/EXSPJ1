@@ -42,10 +42,6 @@
                                     <?php
                                     $sql = "SELECT * FROM dolgozok";
                                     $records = mysqli_query($conn, $sql);
-                                    
-                                    // valahogy meghivni a modal törlés buttonre
-                                    $delete_sql = 'DELETE FROM dolgozok WHERE ID = $row["ID"]';
-                                    mysqli_query($conn,$delete_sql);
 
                                     if (mysqli_num_rows($records) > 0) {
                                         include "modals.php";
@@ -69,7 +65,7 @@
                                         echo "0 results ";
                                     }
 
-                                    
+
 
                                     ?>
                                 </tbody>

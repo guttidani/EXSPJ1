@@ -68,3 +68,8 @@ $("#bankszamlaszam").inputFilter(function (value) {
 //--------------
 
 //--------------
+
+function deleteOnclick (id){
+    var result = '<?php delete_dolgozo('+id+',$conn) ?>';
+    document.write(result);
+}

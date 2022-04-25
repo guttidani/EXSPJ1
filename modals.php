@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $editbtn = '<button class="btn"><i style="font-size:24px" class="fas">&#xf044;</i></button>';
 //$delete_ID = 1;
@@ -23,7 +23,7 @@ $deletebtn = '<button type="button" class="btn btn-outline-danger" data-bs-toggl
                 <form method="POST">
                     <input type="hidden" name="_METHOD" value="DELETE">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <button id="delete" type="submit" onclick="return delete_dolgozo()" class="btn btn-danger">Törlés</button>
+                    <button id="delete" type="submit" onclick="deleteOnclick($row["ID"])" class="btn btn-danger">Törlés</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
                     </form>
                 </div>
@@ -32,11 +32,14 @@ $deletebtn = '<button type="button" class="btn btn-outline-danger" data-bs-toggl
     </div>';
 
 
+function delete_dolgozo($id,$conn)
+{
     if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['_METHOD'] == 'DELETE')) {
         //$id = (int) $_POST['id'];
-        $id = 1;
-        $result = mysqli_query($conn,'DELETE FROM dolgozok WHERE ID='.$id);
+        //$id = 3;
+        $result = mysqli_query($conn, 'DELETE FROM dolgozok WHERE ID=' . $id);
         if ($result !== false) {
-            exit;
+            header("index.php");
         }
     }
+}
