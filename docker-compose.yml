@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  php:
+    container_name: php-exspj1
+    build:
+        context: ./
+        dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+        - db
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8084:80
+
+  db:
+    container_name: db-exspj1
+    image: mysql:latest
+    restart: unless-stopped
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: exspj1
+        MYSQL_USER: exspj1
+        MYSQL_PASSWORD: betu123
+    ports:
+        - 9914:3306
+    
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=root

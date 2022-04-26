@@ -41,6 +41,7 @@
 
                                 <tbody>
                                     <?php
+                                    require "connection.php";
                                     $sql = "SELECT * FROM dolgozok";
                                     $records = mysqli_query($conn, $sql);
 
