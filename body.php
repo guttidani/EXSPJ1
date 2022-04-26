@@ -52,7 +52,7 @@
                                             '<td>', $row["TAJ"], '</td>',
                                             '<td>', $row["bankSzamla"], '</td>',
                                             '<td>', $editbtn, '</td>', // add modify button
-                                            '<td>', $deletebtn, '</td>', // delete button
+                                            '<td>', deletebtn($row["ID"]), '</td>', // delete button
                                             '</tr>';
                                         }
                                     } else {
