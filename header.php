@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-   
+	<script src="js/bootstrap.js"> </script>
+	<script defer src="js/validation.js"></script>
 </head>
 
 <!-- navbar bootstrap -->
@@ -27,6 +27,9 @@
 			</div>
 		</div>
 	</nav>
+	<?php 
+	require_once "connection.php";
+	?>
 </header>
 
 

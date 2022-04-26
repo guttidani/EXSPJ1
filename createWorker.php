@@ -2,22 +2,14 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer src="js/validation.js"></script>
     <title>Dolgozó felvétele</title>
 </head>
 
 <?php
 include_once "header.php";
-session_start();
-
-
 ?>
 
 <body>
@@ -47,7 +39,6 @@ session_start();
                             <select class="form-select" aria-label="Default select example" id="munkakorID" name="munkakorID" onchange="submitSetEnable()" required>
                                 <option value=0 selected>Munkakörök</option>
                                 <?php
-                                require_once "connection.php";
                                 $sql = "SELECT * FROM munkakorok";
                                 $records = mysqli_query($conn, $sql);
 
@@ -67,7 +58,6 @@ session_start();
                             <select class="form-select" aria-label="Default select example" id="szervEgysID" name="szervEgysID" onchange="submitSetEnable()" required>
                                 <option value=0 selected>Szervezeti egységek</option>
                                 <?php
-                                require_once "connection.php";
                                 $sql = "SELECT * FROM szervegys";
                                 $records = mysqli_query($conn, $sql);
 
@@ -173,7 +163,7 @@ session_start();
                                     mysqli_stmt_close($stmt);
                                 }
                             } else {
-                                //echo "request method fail";
+                                echo "request method fail";
                             }
                             mysqli_close($conn);
                             ?>
@@ -187,7 +177,6 @@ session_start();
 
 <!-- Optional JavaScript; choose one of the two ! -->
 <!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
                 </script>
