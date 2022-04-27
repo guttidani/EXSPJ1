@@ -127,7 +127,7 @@ include_once "header.php";
                                 $munkakor_dropdown = "Munkakörök";
 
                                 if ($stmt = mysqli_prepare($conn, $sqlInsert)) {
-                                    echo "mysqli_prepare";
+                                    //echo "mysqli_prepare";
                                     // bind variables to the prepered statement as paramaters
                                     mysqli_stmt_bind_param(
                                         $stmt,
@@ -154,13 +154,16 @@ include_once "header.php";
                                     $param_bankszamlaszam = $bankszamlaszam;
 
                                     if (mysqli_stmt_execute($stmt)) {
-                                        echo "Sikeresen létrejött a Dolgozó";
+                                        //echo "Sikeresen létrejött a Dolgozó";
+                                        include_once "sikeres.php";
+                                        header("location:createWorker.php");
                                     } else {
-                                        echo "Hoppá valami nem jó próbáld újra";
+                                        include_once "errorMsg.php";
                                     }
                                     mysqli_stmt_close($stmt);
                                 }
                             } else {
+                                //include_once "errorMsg.php";
                                 //echo "request method fail";
                             }
                             mysqli_close($conn);

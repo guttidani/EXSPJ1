@@ -37,11 +37,11 @@
                                         require "connection.php";
                                         $sql = "SELECT * FROM dolgozok";
                                         $records = mysqli_query($conn, $sql);
-
-                                        if ($recordsCount = mysqli_num_rows($records) > 0) {
+                                        $counter = 0;
+                                        if (mysqli_num_rows($records) > 0) {
                                             include "modals.php";
-
                                             while ($row = mysqli_fetch_assoc($records)) {
+                                                $counter++;
                                                 echo    '<tr id="', $row["ID"], '">',
                                                 '<td>', $row["ID"], '</td>',
                                                 '<td>', $row["vezetekNev"], '</td>',
@@ -52,22 +52,18 @@
                                                 '<td>', $row["adoazonosito"], '</td>',
                                                 '<td>', $row["TAJ"], '</td>',
                                                 '<td>', $row["bankSzamla"], '</td>',
-                                                '<td><a href="deleteWorker.php?id='. $row["ID"].'" class="btn btn-danger btn-sm">Törlés</a></td>',
-                                                '<td>', include"test.php", '</td>', // add modify button
-                                                '<td> 
-                                                </tr>';
+                                                '<td><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
+                                                '<td>', include "test.php", '</td>', // add modify button
+                                                '</tr>';
                                             }
                                         } else {
                                             echo "0 results ";
                                         }
-
-
-
                                         ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td colspan="5"><?php echo 'Sorok száma: ', $recordsCount ?></td>
+                                            <td colspan="11"><?php echo 'Sorok száma: ', $counter ?></td>
                                         </tr>
                                     </tfoot>
                                 </table>

@@ -40,6 +40,7 @@ http://localhost:8080/
 
 ### Docker start containers - első futtatásra
 cd -> project folder 
+Win at home: cd D:\xampp\htdocs\EXSPJ1\ | docker-compose up
 sudo docker-compose up -d --build
 
 ## Leállítás

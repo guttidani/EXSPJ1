@@ -1,6 +1,3 @@
-<?php 
-//include "header.php";
-?>
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Módosítás</button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -32,12 +29,12 @@
                             <select class="form-select" aria-label="Default select example" id="munkakorID" name="munkakorID" onchange="submitSetEnable()" required>
                                 <option value=0 selected>Munkakörök</option>
                                 <?php
-                                $sql = "SELECT * FROM munkakorok";
-                                $records = mysqli_query($conn, $sql);
+                                $sql_m = "SELECT * FROM munkakorok";
+                                $records_m = mysqli_query($conn, $sql_m);
 
-                                if (mysqli_num_rows($records) > 0) {
-                                    while ($row = mysqli_fetch_assoc($records)) {
-                                        echo '<option class="dropdown-item" value="', $row["munkakorID"], '">', $row["munkakorNev"], '</option>';
+                                if (mysqli_num_rows($records_m) > 0) {
+                                    while ($row_m = mysqli_fetch_assoc($records_m)) {
+                                        echo '<option class="dropdown-item" value="', $row_m["munkakorID"], '">', $row_m["munkakorNev"], '</option>';
                                     }
                                 } else {
                                     echo "0 results ";
@@ -51,12 +48,12 @@
                             <select class="form-select" aria-label="Default select example" id="szervEgysID" name="szervEgysID" onchange="submitSetEnable()" required>
                                 <option value=0 selected>Szervezeti egységek</option>
                                 <?php
-                                $sql = "SELECT * FROM szervegys";
-                                $records = mysqli_query($conn, $sql);
+                                $sql_s = "SELECT * FROM szervegys";
+                                $records_s = mysqli_query($conn, $sql_s);
 
-                                if (mysqli_num_rows($records) > 0) {
-                                    while ($row = mysqli_fetch_assoc($records)) {
-                                        echo '<option class="dropdown-item" value="', $row["szervegysID"], '">', $row["szervEgysNev"], '</option>';
+                                if (mysqli_num_rows($records_s) > 0) {
+                                    while ($row_s = mysqli_fetch_assoc($records_s)) {
+                                        echo '<option class="dropdown-item" value="', $row_s["szervegysID"], '">', $row_s["szervEgysNev"], '</option>';
                                     }
                                 } else {
                                     echo "0 results ";
