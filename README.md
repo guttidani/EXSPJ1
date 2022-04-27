@@ -31,6 +31,12 @@ Nem fogadok el a netről letöltött megoldást
 Nyilvánvalóan egyes részmegoldások (pl. hogyan kell kapcsolódni az adatbázishoz) a netről fognak származni, de komplett megoldás letöltése és beadása (kis módosítás esetén is) nem elfogadható.
 Ha több embernek szemmel láthatóan azonos a megoldása, az első beadást fogadom el eredetinek.
 
+### Localhost ports: -> docker-compose.yml
+index.php
+http://localhost:8084/index.php
+
+phpmyadmin db;root;root
+http://localhost:8080/
 
 ### Docker start containers - első futtatásra
 cd -> project folder 
