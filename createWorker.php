@@ -156,11 +156,12 @@ include_once "header.php";
                                     if (mysqli_stmt_execute($stmt)) {
                                         //echo "Sikeresen létrejött a Dolgozó";
                                         include_once "sikeres.php";
-                                        header("location:createWorker.php");
                                     } else {
-                                        include_once "errorMsg.php";
+                                        //include_once "errorMsg.php";
                                     }
-                                    mysqli_stmt_close($stmt);
+                                    if(mysqli_stmt_close($stmt) == true){
+                                        //header("location:createWorker.php");
+                                    }
                                 }
                             } else {
                                 //include_once "errorMsg.php";

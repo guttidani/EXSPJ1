@@ -1,3 +1,17 @@
+<?php
+
+function selectCurrentId($id,$conn)
+{
+    $sql_m = "SELECT ".$id." FROM dolgozok";
+    $records = mysqli_query($conn, $sql_m);
+    $row = mysqli_fetch_assoc($records);
+  
+    
+    
+}
+
+?>
+
 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Módosítás</button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -17,11 +31,11 @@
                         <div>
                             <div class=" input-group input-group-sm mb-3 inputField">
                                 <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév</span>
-                                <input id="vezetekNev" name="vezetekNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Kovács" required>
+                                <input id="vezetekNev" name="vezetekNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" required>
                             </div>
                             <div class="input-group input-group-sm mb-3 inputField">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév</span>
-                                <input id="keresztNev" name="keresztNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="*István" required>
+                                <input id="keresztNev" name="keresztNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                             </div>
                         </div>
                         <!-- munkakorok dropdowns -->
@@ -65,22 +79,22 @@
                         <!-- Bruttóbér -->
                         <div class="input-group input-group-sm mb-3 inputField">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Bruttóbér</span>
-                            <input id="bruttoBer" maxlength="9" name="bruttoBer" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="123 456 Ft/hónap*" required>
+                            <input id="bruttoBer" maxlength="9" name="bruttoBer" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                         </div>
                         <!-- adóazonosító -->
                         <div class="input-group input-group-sm mb-3 inputField">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Adóazonosító</span>
-                            <input id="adoazonosito" name="adoazonosito" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="10" maxlength="10" placeholder="0123456789*" required>
+                            <input id="adoazonosito" name="adoazonosito" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="10" maxlength="10" required>
                         </div>
                         <!-- TAJ -->
                         <div class="input-group input-group-sm mb-3 inputField">
                             <span class="input-group-text" id="inputGroup-sizing-sm">TAJ szám</span>
-                            <input id="TAJ" name="TAJ" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="9" maxlength="9" placeholder="123 456 789*" required>
+                            <input id="TAJ" name="TAJ" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="9" maxlength="9" required>
                         </div>
                         <!-- Bankszámlaszám -->
                         <div class="input-group input-group-sm mb-3 inputField">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Bankszámla szám</span>
-                            <input id="bankszamlaszam" name="bankszamlaszam" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="24" maxlength="24" placeholder="00001111-22223333-44445555*" required>
+                            <input id="bankszamlaszam" name="bankszamlaszam" type="text" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="24" maxlength="24" value="" required>
                         </div>
                         <br>
                         <!-- gombok -->
@@ -92,7 +106,7 @@
                             <br>
                             <?php
                             // update sql
-                            
+
                             ?>
                         </div>
                     </div>
