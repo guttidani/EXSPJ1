@@ -33,6 +33,7 @@ Ha több embernek szemmel láthatóan azonos a megoldása, az első beadást fog
 
 
 ### Docker start containers - első futtatásra
+cd -> project folder 
 sudo docker-compose up -d --build
 
 ## Leállítás
