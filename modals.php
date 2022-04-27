@@ -1,10 +1,39 @@
 <?php
 
-$editbtn = '<button class="btn"><i style="font-size:24px" class="fas">&#xf044;</i></button>';
+$editbtn2 = '<button class="btn"><i style="font-size:24px" class="fas">&#xf044;</i></button>';
+$editbtn = '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Módosítás</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>';
+
+
 //$delete_ID = 1;
 
 
-function deletebtn($id, $conn)
+function deletebtn($id)
 {
     echo '<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -23,14 +52,13 @@ function deletebtn($id, $conn)
                 </div>
                 <div class="modal-footer"> 
                     <input type="hidden" name="_METHOD" value="DELETE">
-                    <input type="hidden" name="id" value="' . $id . '">
-                    <button id="delete" type="submit" class="btn btn-danger>  Törlés</button>
-                    <a href="deleteWorker.php?id=<?php echo $row[' . $id . ']; ?>" class="btn btn-danger btn-sm">
+                    <input type="hidden" name="id" value="">
+                    <button id="delete" type="submit" class="btn btn-danger><a href="deleteWorker.php?id='. $id.'" class="btn btn-danger btn-sm">Delete</a></td>  Törlés</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
-                    </div>
-                    </div>
-                    </div>
-                    </div>';
+                </div>
+            </div>
+        </div>
+    </div>';
 
     // if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['_METHOD'] == 'DELETE')) {
     //     //$id = (int) $_POST['id'];

@@ -25,8 +25,8 @@
                                             <th data-priority="7" class="mid">Adóazonosító</th>
                                             <th data-priority="8" class="mid">Taj</th>
                                             <th data-priority="9" class="mid">Bankszámlaszám</th>
-                                            <th data-priority="10" class="mid">Módosítás</th>
                                             <th data-priority="11" class="mid">Törlés</th>
+                                            <th data-priority="10" class="mid">Módosítás</th>
                                         </tr>
                                     </thead>
                                     <!-- modal -->
@@ -38,7 +38,7 @@
                                         $sql = "SELECT * FROM dolgozok";
                                         $records = mysqli_query($conn, $sql);
 
-                                        if (mysqli_num_rows($records) > 0) {
+                                        if ($recordsCount = mysqli_num_rows($records) > 0) {
                                             include "modals.php";
 
                                             while ($row = mysqli_fetch_assoc($records)) {
@@ -52,11 +52,10 @@
                                                 '<td>', $row["adoazonosito"], '</td>',
                                                 '<td>', $row["TAJ"], '</td>',
                                                 '<td>', $row["bankSzamla"], '</td>',
-                                                '<td>', $editbtn, '</td>', // add modify button
-                                                // '<td>', deletebtn($row["ID"], $conn), '</td>', // delete button
+                                                '<td><a href="deleteWorker.php?id='. $row["ID"].'" class="btn btn-danger btn-sm">Törlés</a></td>',
+                                                '<td>', include"test.php", '</td>', // add modify button
                                                 '<td> 
-                                                <a href="deleteWorker.php?id='. $row["ID"].'" class="btn btn-danger btn-sm">Delete</a></td>',
-                                                '</tr>';
+                                                </tr>';
                                             }
                                         } else {
                                             echo "0 results ";
@@ -68,7 +67,7 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td colspan="5"><?php echo 'Sorok száma: ', mysqli_num_rows($records) ?></td>
+                                            <td colspan="5"><?php echo 'Sorok száma: ', $recordsCount ?></td>
                                         </tr>
                                     </tfoot>
                                 </table>
