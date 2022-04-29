@@ -52,13 +52,14 @@
                                                 '<td>', $row["adoazonosito"], '</td>',
                                                 '<td>', $row["TAJ"], '</td>',
                                                 '<td>', $row["bankSzamla"], '</td>',
-                                                '<td><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
-                                                '<td>', include "test.php", '</td>', // add modify button
+                                                '<td><a href="deleteWorker.php?id='. $row["ID"].'" class="btn btn-danger btn-sm">Törlés</a></td>',
+                                                '<td><a href="test.php?id='.$row["ID"].'" class="btn btn-sm">Módosítás</a></td>', // add modify button
                                                 '</tr>';
                                             }
                                         } else {
                                             echo "0 results ";
                                         }
+                                        mysqli_close($conn);
                                         ?>
                                     </tbody>
                                     <tfoot>
