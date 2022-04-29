@@ -38,6 +38,10 @@
                                         $sql = "SELECT * FROM dolgozok";
                                         $records = mysqli_query($conn, $sql);
                                         $counter = 0;
+                                        //
+                                        $sql_szervezeti = "SELECT * FROM szervegys";
+                                        //
+                                        $sql_munkakorok = "SELECT * FROM munkakorok";
                                         if (mysqli_num_rows($records) > 0) {
                                             include "modals.php";
                                             while ($row = mysqli_fetch_assoc($records)) {
@@ -52,8 +56,8 @@
                                                 '<td>', $row["adoazonosito"], '</td>',
                                                 '<td>', $row["TAJ"], '</td>',
                                                 '<td>', $row["bankSzamla"], '</td>',
-                                                '<td><a href="deleteWorker.php?id='. $row["ID"].'" class="btn btn-danger btn-sm">Törlés</a></td>',
-                                                '<td><a href="test.php?id='.$row["ID"].'" class="btn btn-sm">Módosítás</a></td>', // add modify button
+                                                '<td><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
+                                                '<td><a href="test.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
                                                 '</tr>';
                                             }
                                         } else {

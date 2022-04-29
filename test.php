@@ -3,6 +3,7 @@ include "header.php";
 include "connection.php";
 $id = $_GET["id"];
 
+
 $sql_l = "SELECT * FROM dolgozok WHERE ID=" . $id;
 
 $records_act = mysqli_query($conn, $sql_l);
@@ -119,13 +120,59 @@ $munkakor_dropdown = "Munkakörök";
                 <br>
                 <!-- gombok -->
                 <div class="mid">
-                    <button id="createWorkerBtn" type="submit" class="btn btn-primary" disabled>Mentés</button>
+                    <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
                     <!-- gombok -->
                     <br>
                     <?php
                     // update sql
+
+                    if(isset($_GET["id"])){
+
+                    }
+                    if ($_GET["id"] < 0) {
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                            $vezetekNev2 = $_POST["vezetekNev"];
+                            $keresztNev2 = $_POST["keresztNev"];
+                            $munkakorID2 = $_POST["munkakorID"];
+                            $szervEgysID2 = $_POST["szervEgysID"];
+                            $bruttoBer2 = $_POST["bruttoBer"];
+                            $adoazonosito2 = $_POST["adoazonosito"];
+                            $TAJ2 = $_POST["TAJ"];
+                            $bankszamlaszam2 = $_POST["bankszamlaszam"];
+
+                            $sql_update = 'UPDATE `dolgozok` SET 
+                            ID = ' . $id . ',
+                            vezetekNev= "' . $vezetekNev2 . '",
+                            keresztNev="' . $keresztNev2 . '",
+                            munkakorID"' . (int) $munkakorID2 . ',
+                            szervEgysID=' . (int) $szervEgysID2 . ',
+                            bruttoBer=' . (int) $bruttoBer2 . ',
+                            adoazonosito="' . $adoazonosito2 . '",
+                            TAJ="' . $TAJ2 . '",
+                            bankSzamla="' . $bankszamlaszam2 . '" 
+                            WHERE ID =' . $id;
+                            if (mysqli_query($conn, $sql_update)) {
+                                //include "sikeres.php";
+                                header("location:/index.php");
+                            } else {
+                                mysqli_error($conn);
+                                header("location:/index.php");
+                                exit;
+                                // include "errorMsg.php";
+                            }
+                        }
+                        if ($conn) {
+                            mysqli_close($conn);
+                            header("location:index.php");
+                            exit;
+                        }
+                    } else {
+                        
+                    }
+
 
                     ?>
                 </div>

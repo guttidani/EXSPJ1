@@ -157,7 +157,7 @@ include_once "header.php";
                                         //echo "Sikeresen létrejött a Dolgozó";
                                         include_once "sikeres.php";
                                     } else {
-                                        //include_once "errorMsg.php";
+                                        include_once "errorMsg.php";
                                     }
                                     if(mysqli_stmt_close($stmt) == true){
                                         //header("location:createWorker.php");
