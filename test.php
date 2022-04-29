@@ -121,6 +121,7 @@ $munkakor_dropdown = "Munkakörök";
                 <!-- gombok -->
                 <div class="mid">
                     <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
+                    <?php echo $id ?>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
                     <!-- gombok -->
@@ -128,8 +129,7 @@ $munkakor_dropdown = "Munkakörök";
                     <?php
                     // update sql
 
-                    if(isset($_GET["id"])){
-
+                    if (isset($_GET["id"])) {
                     }
                     if ($_GET["id"] < 0) {
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -157,11 +157,9 @@ $munkakor_dropdown = "Munkakörök";
                             if (mysqli_query($conn, $sql_update)) {
                                 //include "sikeres.php";
                                 header("location:/index.php");
+                                exit;
                             } else {
                                 mysqli_error($conn);
-                                header("location:/index.php");
-                                exit;
-                                // include "errorMsg.php";
                             }
                         }
                         if ($conn) {
@@ -170,7 +168,6 @@ $munkakor_dropdown = "Munkakörök";
                             exit;
                         }
                     } else {
-                        
                     }
 
 
