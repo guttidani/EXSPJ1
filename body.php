@@ -39,13 +39,21 @@
                                         $records = mysqli_query($conn, $sql);
                                         $counter = 0;
                                         //
-                                        $sql_szervezeti = "SELECT * FROM szervegys";
                                         //
-                                        $sql_munkakorok = "SELECT * FROM munkakorok";
                                         if (mysqli_num_rows($records) > 0) {
-                                            include "modals.php";
+                                            //include "modals.php";
                                             while ($row = mysqli_fetch_assoc($records)) {
                                                 $counter++;
+
+                                                // $munkakor_result = mysqli_query($conn,'SELECT * FROM munkakorok WHERE munkakorID = ',(int)$row["munkakorID"] );
+                                                // $row_munkakor = mysqli_fetch_assoc($munkakor_result);
+                                                // $munkakor_nev = $row_munkakor[1];
+                                                
+                                                // $szervegys_result = mysqli_query($conn,'SELECT * FROM szervegys WHERE szervEgysID =' ,(int)$row["szervEgysID"]);
+                                                // $row_szervegys = mysqli_fetch_assoc($szervegys_result);
+                                                // $szervegys_nev = $row_szervegys[1];
+
+
                                                 echo    '<tr id="', $row["ID"], '">',
                                                 '<td>', $row["ID"], '</td>',
                                                 '<td>', $row["vezetekNev"], '</td>',
@@ -56,19 +64,21 @@
                                                 '<td>', $row["adoazonosito"], '</td>',
                                                 '<td>', $row["TAJ"], '</td>',
                                                 '<td>', $row["bankSzamla"], '</td>',
-                                                '<td><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
-                                                '<td><a href="test.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
+                                                '<td><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés '.$row["munkakorID"].'</a></td>',
+                                                '<td><a href="test.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás '.$row["szervEgysID"].'</a></td>', // add modify button
                                                 '</tr>';
                                             }
                                         } else {
                                             echo "0 results ";
                                         }
-                                        mysqli_close($conn);
+                                        // mysqli_close($conn);
                                         ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td colspan="11"><?php echo 'Sorok száma: ', $counter ?></td>
+                                            <td colspan="9"><?php echo 'Sorok száma: ', $counter ?></td>
+                                            <td colspan="1"><?php echo $row["munkakorID"] ?></td>
+                                            <td colspan="1"><?php echo $row["szervEgysID"]?></td>
                                         </tr>
                                     </tfoot>
                                 </table>

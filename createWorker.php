@@ -177,6 +177,9 @@ include_once "header.php";
     </div>
 </body>
 
+<?php 
+include_once "footer.php";
+?>
 <!-- Optional JavaScript; choose one of the two ! -->
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <!-- Option 2: Separate Popper and Bootstrap JS -->

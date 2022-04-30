@@ -129,11 +129,7 @@ $munkakor_dropdown = "Munkakörök";
                     <?php
                     // update sql
 
-                    if (isset($_GET["id"])) {
-                    }
-                    if ($_GET["id"] < 0) {
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $vezetekNev2 = $_POST["vezetekNev"];
                             $keresztNev2 = $_POST["keresztNev"];
                             $munkakorID2 = $_POST["munkakorID"];
@@ -143,7 +139,7 @@ $munkakor_dropdown = "Munkakörök";
                             $TAJ2 = $_POST["TAJ"];
                             $bankszamlaszam2 = $_POST["bankszamlaszam"];
 
-                            $sql_update = 'UPDATE `dolgozok` SET 
+                            $sql_update = 'UPDATE dolgozok SET 
                             ID = ' . $id . ',
                             vezetekNev= "' . $vezetekNev2 . '",
                             keresztNev="' . $keresztNev2 . '",
@@ -163,12 +159,10 @@ $munkakor_dropdown = "Munkakörök";
                             }
                         }
                         if ($conn) {
-                            mysqli_close($conn);
-                            header("location:index.php");
-                            exit;
+                            // mysqli_close($conn);
+                            // header("location:index.php");
+                            // exit;
                         }
-                    } else {
-                    }
 
 
                     ?>
