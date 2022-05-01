@@ -26,13 +26,12 @@ $bankszamlaszam = $row_act[8];
 $szerv_dropdown = "Szervezeti egységek";
 $munkakor_dropdown = "Munkakörök";
 
-
 ?>
 
 <body>
     <div class="w-auto">
         <!-- idejöhet a form -->
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form action="index.php" method="post">
             <div id="errorShowDiv"></div>
             <div>
                 <div class="mid" style="font-size: 30px;">Dolgozó módosítás </div><br>

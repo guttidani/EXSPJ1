@@ -64,8 +64,8 @@
                                                 '<td>', $row["adoazonosito"], '</td>',
                                                 '<td>', $row["TAJ"], '</td>',
                                                 '<td>', $row["bankSzamla"], '</td>',
-                                                '<td><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés '.$row["munkakorID"].'</a></td>',
-                                                '<td><a href="test.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás '.$row["szervEgysID"].'</a></td>', // add modify button
+                                                '<td><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
+                                                '<td><a href="test.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
                                                 '</tr>';
                                             }
                                         } else {
@@ -77,8 +77,6 @@
                                     <tfoot>
                                         <tr>
                                             <td colspan="9"><?php echo 'Sorok száma: ', $counter ?></td>
-                                            <td colspan="1"><?php echo $row["munkakorID"] ?></td>
-                                            <td colspan="1"><?php echo $row["szervEgysID"]?></td>
                                         </tr>
                                     </tfoot>
                                 </table>
