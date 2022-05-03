@@ -31,7 +31,8 @@ $munkakor_dropdown = "Munkakörök";
 <body>
     <div class="w-auto">
         <!-- idejöhet a form -->
-        <form action="index.php" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <input type="hidden" name="id" value="<?php echo $id ?>">
             <div id="errorShowDiv"></div>
             <div>
                 <div class="mid" style="font-size: 30px;">Dolgozó módosítás </div><br>
