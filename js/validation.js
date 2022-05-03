@@ -37,10 +37,10 @@ function submitSetEnable() {
     if ( 
         document.getElementById("vezetekNev").value != ""  &&
         document.getElementById("keresztNev").value != ""  &&
+        document.getElementById("munkakorID").value != 0 &&
+        document.getElementById("szervEgysID").value != 0 &&
         document.getElementById("bruttoBer").value != ""  &&
         document.getElementById("adoazonosito").value != ""  && 
-        document.getElementById("szervEgysID").value != 0 &&
-        document.getElementById("munkakorID").value != 0 &&
         document.getElementById("TAJ").value != "" && 
         document.getElementById("bankszamlaszam").value != "") {
         btn.disabled = false;

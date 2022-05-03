@@ -31,8 +31,7 @@ $munkakor_dropdown = "Munkakörök";
 <body>
     <div class="w-auto">
         <!-- idejöhet a form -->
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="hidden" name="id" value="<?php echo $id ?>">
+        <form action="index.php" method="post">
             <div id="errorShowDiv"></div>
             <div>
                 <div class="mid" style="font-size: 30px;">Dolgozó módosítás </div><br>
@@ -120,51 +119,64 @@ $munkakor_dropdown = "Munkakörök";
                 <br>
                 <!-- gombok -->
                 <div class="mid">
-                    <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
-                    <!-- gombok -->
-                    <br>
                     <?php
                     // update sql
 
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            $vezetekNev2 = $_POST["vezetekNev"];
-                            $keresztNev2 = $_POST["keresztNev"];
-                            $munkakorID2 = $_POST["munkakorID"];
-                            $szervEgysID2 = $_POST["szervEgysID"];
-                            $bruttoBer2 = $_POST["bruttoBer"];
-                            $adoazonosito2 = $_POST["adoazonosito"];
-                            $TAJ2 = $_POST["TAJ"];
-                            $bankszamlaszam2 = $_POST["bankszamlaszam"];
-
-                            $sql_update = 'UPDATE dolgozok SET 
-                            ID = ' . $id . ',
-                            vezetekNev= "' . $vezetekNev2 . '",
-                            keresztNev="' . $keresztNev2 . '",
-                            munkakorID"' . (int) $munkakorID2 . ',
-                            szervEgysID=' . (int) $szervEgysID2 . ',
-                            bruttoBer=' . (int) $bruttoBer2 . ',
-                            adoazonosito="' . $adoazonosito2 . '",
-                            TAJ="' . $TAJ2 . '",
-                            bankSzamla="' . $bankszamlaszam2 . '" 
-                            WHERE ID =' . $id;
-                            if (mysqli_query($conn, $sql_update)) {
-                                //include "sikeres.php";
-                                header("location:/index.php");
-                                exit;
-                            } else {
-                                mysqli_error($conn);
-                            }
-                        }
-                        if ($conn) {
-                            // mysqli_close($conn);
-                            // header("location:index.php");
-                            // exit;
-                        }
-
-
+                        $vezetekNev2 = $_POST["vezetekNev"];
+                        $keresztNev2 = $_POST["keresztNev"];
+                        $munkakorID2 = $_POST["munkakorID"];
+                        $szervEgysID2 = $_POST["szervEgysID"];
+                        $bruttoBer2 = $_POST["bruttoBer"];
+                        $adoazonosito2 = $_POST["adoazonosito"];
+                        $TAJ2 = $_POST["TAJ"];
+                        $bankszamlaszam2 = $_POST["bankszamlaszam"];
+                    }
                     ?>
+
+                    <button id="createWorkerBtn" type="submit" class="btn btn-primary">
+                        <?php echo '<a href="sampleUpdate.php?
+                                        id=' . $id . '&
+                                        vezetekNev=' . $_POST["vezetekNev"] . '
+                                        ">Mentés</a>'
+                        ?></button>
+
+                    <!-- <button id="createWorkerBtn" type="submit" class="btn btn-primary">
+                        <?php
+                        // echo '<a href="sampleUpdate.php?
+                        //                 id=' . $id . '&
+                        //                 vezetekNev=' . $_POST["vezetekNev"] . '&
+                        //                 keresztNev=' . $_POST["keresztNev"] . '&
+                        //                 munkakorID=' . $_POST["munkakorID"] . '&
+                        //                 szervEgysID=' . $_POST["szervEgysID"] . '&
+                        //                 bruttoBer=' . $_POST["bruttoBer"] . '&
+                        //                 adoazonosito=' . $_POST["adoazonosito"] . '&
+                        //                 TAJ2=' . $_POST["TAJ"] . '&
+                        //                 bankszamlaszam=' . $_POST["bankszamlaszam"] . '
+                        //                 ">Mentés</a>'
+                        ?></button> -->
+
+                    <!-- <button id="createWorkerBtn" type="submit" class="btn btn-primary">
+                        <?php
+                        // echo '<a href="sampleUpdate.php?
+                        //                 id=' . $id . '&
+                        //                 vezetekNev=' . $vezetekNev2 . '&
+                        //                 keresztNev=' . $keresztNev2 . '&
+                        //                 munkakorID=' . $munkakorID2 . '&
+                        //                 szervEgysID=' . $szervEgysID2 . '&
+                        //                 bruttoBer=' . $bruttoBer2 . '&
+                        //                 adoazonosito=' . $adoazonosito2 . '&
+                        //                 TAJ2=' . $TAJ2 . '&
+                        //                 bankszamlaszam=' . $bankszamlaszam2 . '
+                        //                 ">Mentés</a>'
+                        ?></button> -->
+
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
+                    <!-- gombok -->
+                    <br>
+
                 </div>
             </div>
         </form>

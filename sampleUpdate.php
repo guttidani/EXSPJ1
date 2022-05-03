@@ -1,14 +1,13 @@
 <?php
 include "connection.php";
-$id = 4;
-$vezetekNev2 = "Gáspár";
-$keresztNev2 = "Győző";
-$munkakorID2 = 11;
-$szervEgysID2 = 11;
-$bruttoBer2 = 666666;
-$adoazonosito2 = "1111";
-$TAJ2 = "1111";
-$bankszamlaszam2 = "11116666";
+$vezetekNev2 = $_GET["vezetekNev"];
+$keresztNev2 = $_GET["keresztNev"];
+$munkakorID2 = $_GET["munkakorID"];
+$szervEgysID2 = $_GET["szervEgysID"];
+$bruttoBer2 = $_GET["bruttoBer"];
+$adoazonosito2 = $_GET["adoazonosito"];
+$TAJ2 = $_GET["TAJ"];
+$bankszamlaszam2 = $_GET["bankszamlaszam"];
 $sql_update = 'UPDATE dolgozok SET 
     ID = ' . $id . ',
     vezetekNev= "' . $vezetekNev2 . '",
@@ -21,8 +20,8 @@ $sql_update = 'UPDATE dolgozok SET
     bankSzamla="' . $bankszamlaszam2 . '"
     WHERE ID =' . $id;
 if (mysqli_query($conn, $sql_update)) {
-    //include "sikeres.php";
-    // header("location:/index.php");
+    include "sikeres.php";
+    header("location:/index.php");
 } else {
     mysqli_error($conn);
     include "errorMsg.php";
