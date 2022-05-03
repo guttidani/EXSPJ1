@@ -121,7 +121,6 @@ $munkakor_dropdown = "Munkakörök";
                 <!-- gombok -->
                 <div class="mid">
                     <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
-                    <?php echo $id ?>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
                     <!-- gombok -->
