@@ -31,7 +31,7 @@ $munkakor_dropdown = "Munkakörök";
 <body>
     <div class="w-auto">
         <!-- idejöhet a form -->
-        <form action="index.php" method="post">
+        <form action="sampleUpdate.php" method="post">
             <div id="errorShowDiv"></div>
             <div>
                 <div class="mid" style="font-size: 30px;">Dolgozó módosítás </div><br>
@@ -119,27 +119,10 @@ $munkakor_dropdown = "Munkakörök";
                 <br>
                 <!-- gombok -->
                 <div class="mid">
-                    <?php
-                    // update sql
 
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $vezetekNev2 = $_POST["vezetekNev"];
-                        $keresztNev2 = $_POST["keresztNev"];
-                        $munkakorID2 = $_POST["munkakorID"];
-                        $szervEgysID2 = $_POST["szervEgysID"];
-                        $bruttoBer2 = $_POST["bruttoBer"];
-                        $adoazonosito2 = $_POST["adoazonosito"];
-                        $TAJ2 = $_POST["TAJ"];
-                        $bankszamlaszam2 = $_POST["bankszamlaszam"];
-                    }
-                    ?>
+                    <input type="hidden" name="id" value="<?php echo $id ?>">
+                    <button id="createWorkerBtn" type="submit" class="btn btn-primary" disabled>Mentés</button>
 
-                    <button id="createWorkerBtn" type="submit" class="btn btn-primary">
-                        <?php echo '<a href="sampleUpdate.php?
-                                        id=' . $id . '&
-                                        vezetekNev=' . $_POST["vezetekNev"] . '
-                                        ">Mentés</a>'
-                        ?></button>
 
                     <!-- <button id="createWorkerBtn" type="submit" class="btn btn-primary">
                         <?php
