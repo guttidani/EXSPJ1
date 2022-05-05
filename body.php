@@ -76,7 +76,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="9"><?php echo 'Sorok száma: ', $counter ?></td>
+                                <td colspan="11"><?php echo 'Sorok száma: ', $counter ?></td>
                             </tr>
                         </tfoot>
                     </table>
