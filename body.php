@@ -48,7 +48,7 @@
                                                 // $munkakor_result = mysqli_query($conn,'SELECT * FROM munkakorok WHERE munkakorID = ',(int)$row["munkakorID"] );
                                                 // $row_munkakor = mysqli_fetch_assoc($munkakor_result);
                                                 // $munkakor_nev = $row_munkakor[1];
-                                                
+
                                                 // $szervegys_result = mysqli_query($conn,'SELECT * FROM szervegys WHERE szervEgysID =' ,(int)$row["szervEgysID"]);
                                                 // $row_szervegys = mysqli_fetch_assoc($szervegys_result);
                                                 // $szervegys_nev = $row_szervegys[1];
