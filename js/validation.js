@@ -31,6 +31,25 @@
 function adoCDV() {
     var ado = document.getElementById("adoazonosito").value;
 
+    var tmp;
+    var szorzo =1;
+    var e=0;
+    for (let i = 0; i < ado.length-1; i++) {
+        e += (ado[i]*szorzo);
+        szorzo++;
+        
+    }
+    var maradek =e%11; 
+    if(maradek==10){
+        return false;
+    }else 
+    if(ado[0]!= "8"){
+        return false;
+    }else 
+    if(maradek == ado[ado.length-1]){
+        return true;
+    }
+
 }
 
 
@@ -51,6 +70,7 @@ function submitSetEnable() {
         document.getElementById("szervEgysID").value != 0 &&
         document.getElementById("bruttoBer").value != "" &&
         document.getElementById("adoazonosito").value != "" &&
+        adoCDV() &&
         document.getElementById("TAJ").value != "" &&
         document.getElementById("bankszamlaszam").value != "") {
         btn.disabled = false;
