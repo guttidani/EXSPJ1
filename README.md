@@ -53,9 +53,14 @@ sudo docker-compose logs
 sudo docker-compose ps
 
 ## TAJ CDV 
-A TAJ szám egy kilenc számjegyből álló szám, amelyben az első nyolc számjegy egy folyamatosan kiadott egyszerű sorszám, amely mindig az előző, utoljára kiadott sorszámból egy hozzáadásával keletkezik. A kilencedik számjegy ellenőrző ún. CDV kód, melynek képzési algoritmusa az alábbi:
+A TAJ szám egy kilenc számjegyből álló szám, amelyben az első nyolc 
+számjegy egy folyamatosan kiadott egyszerű sorszám, amely mindig az előző, 
+utoljára kiadott sorszámból egy hozzáadásával keletkezik. A kilencedik 
+számjegy ellenőrző ún. CDV kód, melynek képzési algoritmusa az alábbi:
 
-A TAJ szám első nyolc számjegyéből a páratlan helyen állókat hárommal, a páros helyen állókat héttel szorozzuk, és a szorzatokat összeadjuk. Az összeget tízzel elosztva a maradékot tekintjük a kilencedik, azaz CDV kódnak.
+A TAJ szám első nyolc számjegyéből a páratlan helyen állókat hárommal,
+ a páros helyen állókat héttel szorozzuk, és a szorzatokat összeadjuk. 
+ Az összeget tízzel elosztva a maradékot tekintjük a kilencedik, azaz CDV kódnak.
 
 ## Adóazonosító CDV
 2. Az adóazonosító számot az alábbiak szerint kell képezni:
