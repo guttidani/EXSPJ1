@@ -27,21 +27,31 @@
     };
 }(jQuery));
 
+
+function adoCDV() {
+    var ado = document.getElementById("adoazonosito").value;
+
+}
+
+
+function tajCDV() {
+    var taj = document.getElementById("TAJ").value;
+
+}
+
 function submitSetEnable() {
 
     var btn = document.getElementById("createWorkerBtn");
     console.log("huhu");
 
-    
-
-    if ( 
-        document.getElementById("vezetekNev").value != ""  &&
-        document.getElementById("keresztNev").value != ""  &&
+    if (
+        document.getElementById("vezetekNev").value != "" &&
+        document.getElementById("keresztNev").value != "" &&
         document.getElementById("munkakorID").value != 0 &&
         document.getElementById("szervEgysID").value != 0 &&
-        document.getElementById("bruttoBer").value != ""  &&
-        document.getElementById("adoazonosito").value != ""  && 
-        document.getElementById("TAJ").value != "" && 
+        document.getElementById("bruttoBer").value != "" &&
+        document.getElementById("adoazonosito").value != "" &&
+        document.getElementById("TAJ").value != "" &&
         document.getElementById("bankszamlaszam").value != "") {
         btn.disabled = false;
 
@@ -69,7 +79,7 @@ $("#bankszamlaszam").inputFilter(function (value) {
 
 //--------------
 
-function deleteOnclick (id){
-    var result = '<?php delete_dolgozo('+id+',$conn) ?>';
+function deleteOnclick(id) {
+    var result = '<?php delete_dolgozo(' + id + ',$conn) ?>';
     document.write(result);
 }
