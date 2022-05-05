@@ -32,29 +32,45 @@ function adoCDV() {
     var ado = document.getElementById("adoazonosito").value;
 
     var tmp;
-    var szorzo =1;
-    var e=0;
-    for (let i = 0; i < ado.length-1; i++) {
-        e += (ado[i]*szorzo);
+    var szorzo = 1;
+    var e = 0;
+    for (let i = 0; i < ado.length - 1; i++) {
+        e += (ado[i] * szorzo);
         szorzo++;
-        
+
     }
-    var maradek =e%11; 
-    if(maradek==10){
+    var maradek = e % 11;
+    if (maradek == 10) {
         return false;
-    }else 
-    if(ado[0]!= "8"){
-        return false;
-    }else 
-    if(maradek == ado[ado.length-1]){
-        return true;
-    }
+    } else
+        if (ado[0] != "8") {
+            return false;
+        } else
+            if (maradek == ado[ado.length - 1]) {
+                return true;
+            }
 
 }
 
 
 function tajCDV() {
     var taj = document.getElementById("TAJ").value;
+    var sum = 0;
+    var count = 1;
+    for (let i = 0; i < taj.length - 1; i++) {
+        const element = taj[i];
+        if (count % 2 == 0) {
+            sum += taj[i] * 7;
+        } else {
+            sum += taj[i] * 3;
+        }
+        count++;
+    }
+    if (taj[taj.length - 1] == sum % 10) {
+        return true
+    } else {
+        return false;
+    }
 
 }
 
@@ -72,6 +88,7 @@ function submitSetEnable() {
         document.getElementById("adoazonosito").value != "" &&
         adoCDV() &&
         document.getElementById("TAJ").value != "" &&
+        tajCDV() &&
         document.getElementById("bankszamlaszam").value != "") {
         btn.disabled = false;
 
