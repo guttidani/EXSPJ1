@@ -16,7 +16,6 @@ include_once "header.php";
         <div class="row">
             <div class="container-xl col">
                 <!-- input form -->
-                <!-- ID ne felejtsd -->
                 <form id="createWorkerForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div id="errorShowDiv"></div>
                     <div>
@@ -100,8 +99,6 @@ include_once "header.php";
 
                             <br>
                             <?php
-                            //Select max id +1 = param_ID
-                            // trim($_post[values]) függvényt megnézni
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $sql = "SELECT MAX(ID) FROM dolgozok";
                                 $records = mysqli_query($conn, $sql);
@@ -160,12 +157,8 @@ include_once "header.php";
                                         include_once "errorMsg.php";
                                     }
                                     if(mysqli_stmt_close($stmt) == true){
-                                        //header("location:createWorker.php");
                                     }
                                 }
-                            } else {
-                                //include_once "errorMsg.php";
-                                //echo "request method fail";
                             }
                             mysqli_close($conn);
                             ?>

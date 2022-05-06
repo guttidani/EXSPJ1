@@ -3,17 +3,9 @@ include "header.php";
 include "connection.php";
 $id = $_GET["id"];
 
-
 $sql_l = "SELECT * FROM dolgozok WHERE ID=" . $id;
-
 $records_act = mysqli_query($conn, $sql_l);
-//echo $records_act;
 $row_act = mysqli_fetch_row($records_act);
-// while ($row_act = mysqli_fetch_row($records_act)) {
-//     //echo $row_act[0];
-// }
-
-
 
 $vezetekNev = $row_act[1];
 $keresztNev = $row_act[2];
@@ -119,47 +111,12 @@ $munkakor_dropdown = "Munkakörök";
                 <br>
                 <!-- gombok -->
                 <div class="mid">
-
                     <input type="hidden" name="id" value="<?php echo $id ?>">
-                    <button id="createWorkerBtn" type="submit" class="btn btn-primary" disabled>Mentés</button>
-
-
-                    <!-- <button id="createWorkerBtn" type="submit" class="btn btn-primary">
-                        <?php
-                        // echo '<a href="sampleUpdate.php?
-                        //                 id=' . $id . '&
-                        //                 vezetekNev=' . $_POST["vezetekNev"] . '&
-                        //                 keresztNev=' . $_POST["keresztNev"] . '&
-                        //                 munkakorID=' . $_POST["munkakorID"] . '&
-                        //                 szervEgysID=' . $_POST["szervEgysID"] . '&
-                        //                 bruttoBer=' . $_POST["bruttoBer"] . '&
-                        //                 adoazonosito=' . $_POST["adoazonosito"] . '&
-                        //                 TAJ2=' . $_POST["TAJ"] . '&
-                        //                 bankszamlaszam=' . $_POST["bankszamlaszam"] . '
-                        //                 ">Mentés</a>'
-                        ?></button> -->
-
-                    <!-- <button id="createWorkerBtn" type="submit" class="btn btn-primary">
-                        <?php
-                        // echo '<a href="sampleUpdate.php?
-                        //                 id=' . $id . '&
-                        //                 vezetekNev=' . $vezetekNev2 . '&
-                        //                 keresztNev=' . $keresztNev2 . '&
-                        //                 munkakorID=' . $munkakorID2 . '&
-                        //                 szervEgysID=' . $szervEgysID2 . '&
-                        //                 bruttoBer=' . $bruttoBer2 . '&
-                        //                 adoazonosito=' . $adoazonosito2 . '&
-                        //                 TAJ2=' . $TAJ2 . '&
-                        //                 bankszamlaszam=' . $bankszamlaszam2 . '
-                        //                 ">Mentés</a>'
-                        ?></button> -->
-
-
+                    <button id="updateWorkerBtn" type="submit" class="btn btn-primary" disabled>Mentés</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
                     <!-- gombok -->
                     <br>
-
                 </div>
             </div>
         </form>

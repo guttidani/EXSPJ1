@@ -1,7 +1,6 @@
 # EXSPJ1
 Munkaerő nyilvántartás
 
-
 Táblák
 dolgozók (név, munkakör kód, szerv.egység kód, bruttó bér, adóazonosító*, TAJ*, bankszámlaszám*)
 munkakörök

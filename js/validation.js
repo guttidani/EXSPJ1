@@ -30,14 +30,12 @@
 
 function adoCDV() {
     var ado = document.getElementById("adoazonosito").value;
-
     var tmp;
     var szorzo = 1;
     var e = 0;
     for (let i = 0; i < ado.length - 1; i++) {
         e += (ado[i] * szorzo);
         szorzo++;
-
     }
     var maradek = e % 11;
     if (maradek == 10) {
@@ -45,10 +43,11 @@ function adoCDV() {
     } else
         if (ado[0] != "8") {
             return false;
-        } else
+        } else {
             if (maradek == ado[ado.length - 1]) {
                 return true;
             }
+        }
 
 }
 
@@ -69,15 +68,13 @@ function tajCDV() {
     if (taj[taj.length - 1] == sum % 10) {
         return true
     } else {
+
         return false;
     }
-
 }
 
 function submitSetEnable() {
-
     var btn = document.getElementById("createWorkerBtn");
-    console.log("huhu");
 
     if (
         document.getElementById("vezetekNev").value != "" &&
@@ -91,9 +88,7 @@ function submitSetEnable() {
         tajCDV() &&
         document.getElementById("bankszamlaszam").value != "") {
         btn.disabled = false;
-
         console.log("set disabled false");
-
     } else {
         btn.disabled = true;
         console.log("set disabled true");
@@ -113,10 +108,3 @@ $("#bankszamlaszam").inputFilter(function (value) {
     return /^-?\d*$/.test(value);
 }, "Számot lehet csak megadni");
 //--------------
-
-//--------------
-
-function deleteOnclick(id) {
-    var result = '<?php delete_dolgozo(' + id + ',$conn) ?>';
-    document.write(result);
-}

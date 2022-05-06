@@ -10,7 +10,6 @@
                 <form method="POST">
                     <table class="table table-bordered table-hover">
                         <thead>
-                            <!-- text középre igazítani vertikális és horizontálisan -->
                             <!-- https://jsfiddle.net/u9d1ewsh/ lapozható -->
                             <tr>
                                 <th data-priority="1" class="mid">ID</th>
@@ -26,19 +25,13 @@
                                 <th data-priority="10" class="mid">Módosítás</th>
                             </tr>
                         </thead>
-                        <!-- modal -->
-                        <!-- Button trigger modal -->
-
                         <tbody>
                             <?php
                             require "connection.php";
                             $sql = "SELECT * FROM dolgozok";
                             $records = mysqli_query($conn, $sql);
                             $counter = 0;
-                            //
-                            //
                             if (mysqli_num_rows($records) > 0) {
-                                //include "modals.php";
                                 while ($row = mysqli_fetch_assoc($records)) {
                                     $counter++;
                                     $munkid = $row["munkakorID"];
@@ -52,7 +45,6 @@
                                     $szervegys_result = mysqli_query($conn, $sql_sz);
                                     $row_szervegys = mysqli_fetch_assoc($szervegys_result);
                                     $szervegys_nev = $row_szervegys["szervEgysNev"];
-
 
                                     echo    '<tr id="', $row["ID"], '">',
                                     '<td class="mid">', $row["ID"], '</td>',
@@ -71,7 +63,7 @@
                             } else {
                                 echo "0 results ";
                             }
-                            // mysqli_close($conn);
+                            mysqli_close($conn);
                             ?>
                         </tbody>
                         <tfoot>
@@ -86,5 +78,4 @@
         </div>
     </div>
 </div>
-
 </html>
