@@ -83,16 +83,30 @@ function submitSetEnable() {
         document.getElementById("szervEgysID").value != 0 &&
         document.getElementById("bruttoBer").value != "" &&
         document.getElementById("adoazonosito").value != "" &&
-        adoCDV() &&
         document.getElementById("TAJ").value != "" &&
-        tajCDV() &&
         document.getElementById("bankszamlaszam").value != "") {
-        btn.disabled = false;
+        if (adoCDV() ) {
+            btn.disabled = false;
+            $("#adoazonosito").inputFilter(function (value) {
+                return /^-?\d*$/.test(value);
+            }, "Érvénytelen az adóazonosító");
+            
+        } else if (tajCDV()){
+            btn.disabled = false;
+            $("#TAJ").inputFilter(function (value) {
+                return /^-?\d*$/.test(value);
+            }, "Érvénytelen TAJ szám");
+        }
+
         console.log("set disabled false");
     } else {
         btn.disabled = true;
         console.log("set disabled true");
     }
+}
+
+function valami (){
+    
 }
 
 $("#bruttoBer").inputFilter(function (value) {
