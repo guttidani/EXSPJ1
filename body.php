@@ -57,7 +57,7 @@
                                     '<td class="mid">', $row["TAJ"], '</td>',
                                     '<td class="mid">', $row["bankSzamla"], '</td>',
                                     '<td class="mid"><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
-                                    '<td class="mid"><a href="test.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
+                                    '<td class="mid"><a href="dolgozoUpdate.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
                                     '</tr>';
                                 }
                             } else {
@@ -78,4 +78,5 @@
         </div>
     </div>
 </div>
+
 </html>

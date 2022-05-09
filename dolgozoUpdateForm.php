@@ -23,7 +23,7 @@ $munkakor_dropdown = "Munkakörök";
 <body>
     <div class="w-auto">
         <!-- idejöhet a form -->
-        <form action="sampleUpdate.php" method="post">
+        <form action="dolgozoUpdate.php" method="post">
             <div id="errorShowDiv"></div>
             <div>
                 <div class="mid" style="font-size: 30px;">Dolgozó módosítás </div><br>

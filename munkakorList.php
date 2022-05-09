@@ -1,9 +1,7 @@
 <?php
 include "connection.php";
 include "header.php";
-
 ?>
-
 
 <table class="table table-bordered table-hover">
     <thead>
@@ -23,9 +21,6 @@ include "header.php";
         $counter = 0;
         if (mysqli_num_rows($records) > 0) {
             while ($row = mysqli_fetch_assoc($records)) {
-                $counter++;
-                
-
                 echo
                 '<tr id="', $row["munkakorID"], '">',
                 '<td class="mid">', $row["munkakorID"], '</td>',
@@ -33,6 +28,7 @@ include "header.php";
                 '<td class="mid"><a href="munkakorDelete.php?id=' . $row["munkakorID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
                 '<td class="mid"><a href="munkakorUpdate.php?id=' . $row["munkakorID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
                 '</tr>';
+                $counter++;
             }
         } else {
             echo "0 results ";
@@ -47,7 +43,7 @@ include "header.php";
     </tfoot>
 </table>
 
-<?php 
+<?php
 include "footer.php";
 
 ?>
