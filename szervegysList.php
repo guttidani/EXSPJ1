@@ -4,13 +4,13 @@ include "header.php";
 ?>
 
 <body>
-<h2>Munkakörök</h2>
+<h2>Szervezetiegységek</h2>
     <table class="table table-bordered table-hover">
         <thead>
             <!-- https://jsfiddle.net/u9d1ewsh/ lapozható -->
             <tr>
                 <th data-priority="1" class="mid">ID</th>
-                <th data-priority="2" class="mid">Munkakör</th>
+                <th data-priority="2" class="mid">Szervezetiegység</th>
                 <th data-priority="3" class="mid">Törlés</th>
                 <th data-priority="4" class="mid">Módosítás</th>
             </tr>
@@ -18,17 +18,17 @@ include "header.php";
         <tbody>
             <?php
             require "connection.php";
-            $sql = "SELECT * FROM munkakorok";
+            $sql = "SELECT * FROM szervegys";
             $records = mysqli_query($conn, $sql);
             $counter = 0;
             if (mysqli_num_rows($records) > 0) {
                 while ($row = mysqli_fetch_assoc($records)) {
                     echo
-                    '<tr id="', $row["munkakorID"], '">',
-                    '<td class="mid">', $row["munkakorID"], '</td>',
-                    '<td class="mid">', $row["munkakorNev"], '</td>',
-                    '<td class="mid"><a href="munkakorDelete.php?id=' . $row["munkakorID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
-                    '<td class="mid"><a href="munkakorUpdateForm.php?id=' . $row["munkakorID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
+                    '<tr id="', $row["szervegysID"], '">',
+                    '<td class="mid">', $row["szervegysID"], '</td>',
+                    '<td class="mid">', $row["szervEgysNev"], '</td>',
+                    '<td class="mid"><a href="szervegysDelete.php?id=' . $row["szervegysID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
+                    '<td class="mid"><a href="szervegysUpdateForm.php?id=' . $row["szervegysID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
                     '</tr>';
                     $counter++;
                 }

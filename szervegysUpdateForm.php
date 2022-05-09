@@ -3,15 +3,15 @@ include "connection.php";
 include "header.php";
 
 $id = $_GET["id"];
-$munkakorNev = "";
-$sql_select = "SELECT * FROM dolgozok WHERE munkakorID =" . $id;
+$szervEgysNev = "";
+$sql_select = "SELECT * FROM dolgozok WHERE szervegysID =" . $id;
 if (mysqli_num_rows(mysqli_query($conn, $sql_select)) < 1) {
-    $sql_l = "SELECT * FROM munkakorok WHERE munkakorID=" . $id;
+    $sql_l = "SELECT * FROM szervegys WHERE szervegysID=" . $id;
     $records_act = mysqli_query($conn, $sql_l);
     $row_act = mysqli_fetch_row($records_act);
 
-    $munkakorID = $row_act[0];
-    $munkakorNev = $row_act[1];
+    $szervEgysID = $row_act[0];
+    $szervEgysNev = $row_act[1];
 } else {
     include "errorMsg.php";
 }
@@ -20,10 +20,10 @@ if (mysqli_num_rows(mysqli_query($conn, $sql_select)) < 1) {
 
 <body>
     <div class="mid">
-        <form action="munkakorUpdate.php" method="post">
+        <form action="szervegysUpdate.php" method="post">
             <div class=" input-group input-group-sm mb-3 inputField">
-                <span class="input-group-text" id="inputGroup-sizing-s">Munkakör</span>
-                <input id="munkakorNev" name="munkakorNev" type="text" value="<?php echo $munkakorNev ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" required>
+                <span class="input-group-text" id="inputGroup-sizing-s">Szervezetiegység</span>
+                <input id="szervEgysNev" name="szervEgysNev" type="text" value="<?php echo $szervEgysNev ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" required>
             </div>
             <!-- gombok -->
             <div class="mid">

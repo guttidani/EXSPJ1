@@ -3,11 +3,11 @@
 include "connection.php";
 
 $id = $_GET["id"];
-$sql_delete = 'DELETE FROM munkakorok WHERE munkakorID=' . $id;
-$sql_select = "SELECT * FROM dolgozok WHERE munkakorID =" . $id;
+$sql_delete = 'DELETE FROM szervegys WHERE szervegysID=' . $id;
+$sql_select = "SELECT * FROM dolgozok WHERE szervegysID =" . $id;
 if (mysqli_num_rows(mysqli_query($conn, $sql_select)) < 1) {
     mysqli_query($conn, $sql_delete);
-    header("location:munkakorList.php");
+    header("location:szervegysList.php");
     exit;
 } else {
     include_once "header.php";

@@ -5,7 +5,6 @@
     <div class="row">
         <div class="col mid">
             <h2>Dolgozók</h2>
-
             <div class="table-responsive w-auto" data-pattern="priority-columns">
                 <form method="POST">
                     <table class="table table-bordered table-hover">
@@ -57,7 +56,7 @@
                                     '<td class="mid">', $row["TAJ"], '</td>',
                                     '<td class="mid">', $row["bankSzamla"], '</td>',
                                     '<td class="mid"><a href="deleteWorker.php?id=' . $row["ID"] . '" class="btn btn-danger btn-sm">Törlés</a></td>',
-                                    '<td class="mid"><a href="dolgozoUpdate.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
+                                    '<td class="mid"><a href="dolgozoUpdateForm.php?id=' . $row["ID"] . '" class="btn btn-primary btn-sm">Módosítás</a></td>', // add modify button
                                     '</tr>';
                                 }
                             } else {

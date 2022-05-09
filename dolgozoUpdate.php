@@ -24,5 +24,6 @@ if (mysqli_query($conn, $sql_update)) {
     header("location:/index.php");
 } else {
     mysqli_error($conn);
+    include "header.php";
     include "errorMsg.php";
 }

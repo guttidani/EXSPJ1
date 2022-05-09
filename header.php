@@ -23,7 +23,19 @@
 				<ul class="navbar-nav mid">
 					<!-- Navbar items -->
 					<li class="nav-item">
-						<a class="nav-link" href="createWorker.php">Dolgozó felvétele</a>
+						<a class="nav-link" href="createWorker.php">Dolgozó felvétel</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="munkakorList.php">Munkakörök</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="munkakorCreate.php">Munkakörök felvétel</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="szervegysList.php">Szervezetiegységek</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="szervegysCreate.php">Szervezetiegységek felvétel</a>
 					</li>
 				</ul>
 			</div>
