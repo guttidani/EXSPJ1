@@ -19,7 +19,7 @@ include_once "header.php";
                 <form id="createWorkerForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div id="errorShowDiv"></div>
                     <div>
-                        <div class="mid" style="font-size: 30px;">Dolgozó szerkesztése </div><br>
+                        <div class="mid" style="font-size: 30px;">Dolgozó felvétele </div><br>
                         <!-- név -->
                         <div>
                             <div class=" input-group input-group-sm mb-3 inputField">

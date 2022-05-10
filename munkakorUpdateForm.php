@@ -18,7 +18,15 @@ if (mysqli_num_rows(mysqli_query($conn, $sql_select)) < 1) {
 
 ?>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Munkakör modositasa</title>
+</head>
+
+
 <body>
+    <h2 class="mid">Munkakör modositasa</h2>
     <div class="mid">
         <form action="munkakorUpdate.php" method="post">
             <div class=" input-group input-group-sm mb-3 inputField">

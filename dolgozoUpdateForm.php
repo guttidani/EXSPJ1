@@ -32,11 +32,11 @@ $munkakor_dropdown = "Munkakörök";
                 <div>
                     <div class=" input-group input-group-sm mb-3 inputField">
                         <span class="input-group-text" id="inputGroup-sizing-s">Vezetéknév</span>
-                        <input id="vezetekNev" name="vezetekNev" type="text" value="<?php echo $vezetekNev ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" required>
+                        <input id="vezetekNev" name="vezetekNev" type="text" value="<?php echo $vezetekNev ?>" class="form-control" onchange="submitSetEnable()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" required>
                     </div>
                     <div class="input-group input-group-sm mb-3 inputField">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Keresztnév</span>
-                        <input id="keresztNev" name="keresztNev" type="text" value="<?php echo $keresztNev ?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+                        <input id="keresztNev" name="keresztNev" type="text" value="<?php echo $keresztNev ?>" class="form-control" onchange="submitSetEnable()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                     </div>
                 </div>
                 <!-- munkakorok dropdowns -->
@@ -91,28 +91,28 @@ $munkakor_dropdown = "Munkakörök";
                 <!-- Bruttóbér -->
                 <div class="input-group input-group-sm mb-3 inputField">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Bruttóbér</span>
-                    <input id="bruttoBer" maxlength="9" name="bruttoBer" type="text" value="<?php echo $bruttoBer ?>" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+                    <input id="bruttoBer" maxlength="9" name="bruttoBer" type="text" value="<?php echo $bruttoBer ?>" class="form-control noSpinner" onchange="submitSetEnable()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                 </div>
                 <!-- adóazonosító -->
                 <div class="input-group input-group-sm mb-3 inputField">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Adóazonosító</span>
-                    <input id="adoazonosito" name="adoazonosito" type="text" value="<?php echo $adoazonosito ?>" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="10" maxlength="10" required>
+                    <input id="adoazonosito" name="adoazonosito" type="text" value="<?php echo $adoazonosito ?>" class="form-control noSpinner" onchange="submitSetEnable()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="10" maxlength="10" required>
                 </div>
                 <!-- TAJ -->
                 <div class="input-group input-group-sm mb-3 inputField">
                     <span class="input-group-text" id="inputGroup-sizing-sm">TAJ szám</span>
-                    <input id="TAJ" name="TAJ" type="text" value="<?php echo $TAJ ?>" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="9" maxlength="9" required>
+                    <input id="TAJ" name="TAJ" type="text" value="<?php echo $TAJ ?>" class="form-control noSpinner" aria-label="Sizing example input" onchange="submitSetEnable()" aria-describedby="inputGroup-sizing-sm" minlength="9" maxlength="9" required>
                 </div>
                 <!-- Bankszámlaszám -->
                 <div class="input-group input-group-sm mb-3 inputField">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Bankszámla szám</span>
-                    <input id="bankszamlaszam" name="bankszamlaszam" type="text" value="<?php echo $bankszamlaszam ?>" class="form-control noSpinner" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="24" maxlength="24" value="" required>
+                    <input id="bankszamlaszam" name="bankszamlaszam" type="text" value="<?php echo $bankszamlaszam ?>" class="form-control noSpinner" onchange="submitSetEnable()" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="24" maxlength="24" value="" required>
                 </div>
                 <br>
                 <!-- gombok -->
                 <div class="mid">
                     <input type="hidden" name="id" value="<?php echo $id ?>">
-                    <button id="updateWorkerBtn" type="submit" class="btn btn-primary" disabled>Mentés</button>
+                    <button id="updateWorkerBtn" type="submit" class="btn btn-primary" >Mentés</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button id="megseBtn" type="reset" class="btn btn-primary">Mégse</button>
                     <!-- gombok -->

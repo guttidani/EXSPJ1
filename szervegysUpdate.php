@@ -4,7 +4,7 @@ include "connection.php";
 $id = $_POST["id"];
 $szervEgysNev = $_POST["szervEgysNev"];
 
-$sql_select = "SELECT * FROM szervegys WHERE szervegysID =" . $id;
+$sql_select = "SELECT * FROM dolgozok WHERE szervegysID =" . $id;
 $sql_update = 'UPDATE szervegys SET
 szervegysID ='.$id.',
 szervEgysNev= "' . $szervEgysNev . '"

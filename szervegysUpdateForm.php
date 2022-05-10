@@ -1,3 +1,9 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Szervezetiegység modositasa</title>
+</head>
+
 <?php
 include "connection.php";
 include "header.php";
@@ -19,6 +25,7 @@ if (mysqli_num_rows(mysqli_query($conn, $sql_select)) < 1) {
 ?>
 
 <body>
+    <h2 class="mid">Szervezetiegység modositasa</h2>
     <div class="mid">
         <form action="szervegysUpdate.php" method="post">
             <div class=" input-group input-group-sm mb-3 inputField">

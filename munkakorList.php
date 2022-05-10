@@ -4,7 +4,7 @@ include "header.php";
 ?>
 
 <body>
-<h2>Munkakörök</h2>
+<h2 class="mid">Munkakörök</h2>
     <table class="table table-bordered table-hover">
         <thead>
             <!-- https://jsfiddle.net/u9d1ewsh/ lapozható -->
@@ -40,7 +40,7 @@ include "header.php";
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="4"><?php echo 'Sorok száma: ', $counter ?></td>
+                <td class="mid" colspan="4"><?php echo 'Sorok száma: ', $counter ?></td>
             </tr>
         </tfoot>
     </table>

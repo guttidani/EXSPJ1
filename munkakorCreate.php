@@ -1,13 +1,20 @@
 <?php
 include_once "header.php";
 ?>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Munkakör felvétele</title>
+</head>
+
 
 <body>
+<h2 class="mid">Munkakör felvétele</h2>
     <div class="row">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class=" input-group input-group-sm mb-3 inputField">
                 <span class="input-group-text" id="inputGroup-sizing-s">Munkakör</span>
-                <input id="munkakorNev" name="munkakorNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Munkakorok" required>
+                <input id="munkakorNev" name="munkakorNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Munkakör" required>
             </div>
             <div class="mid">
                 <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>

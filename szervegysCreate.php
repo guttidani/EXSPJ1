@@ -2,12 +2,19 @@
 include_once "header.php";
 ?>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Szervezetiegység felvétele</title>
+</head>
+
 <body>
+<h2 class="mid">Szervezetiegység felvétele</h2>
     <div class="row">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class=" input-group input-group-sm mb-3 inputField">
                 <span class="input-group-text" id="inputGroup-sizing-s">Szervezetiegység felvetele</span>
-                <input id="szervEgysNev" name="szervEgysNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Munkakorok" required>
+                <input id="szervEgysNev" name="szervEgysNev" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-s" placeholder="*Szervezetiegység" required>
             </div>
             <div class="mid">
                 <button id="createWorkerBtn" type="submit" class="btn btn-primary">Mentés</button>
